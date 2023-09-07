@@ -1,9 +1,8 @@
 import math
-from functions.tridag import tridag
-from functions.calculate_ns import calcNS
+from classes.FiniteDifference import FiniteDifference
 
 
-class ImplicitFD:
+class ImplicitFD(FiniteDifference):
 
     def __init__(self, stock):
         """
@@ -35,7 +34,7 @@ class ImplicitFD:
         smax = 2 * s
 
         if n_s:
-            n_s = calcNS(n_t, smax, sigma, t)
+            n_s = self.calcNS(n_t, smax, sigma, t)
             n_s = n_s + (n_s % 2)
         else:
             n_s = n_s + (n_s % 2)
@@ -90,33 +89,33 @@ class ImplicitFD:
 
         if 'n' == bc:  # Neumann Condition
             for i in range(n_t, 0, -1):
-                tridag(a, b, c, f, fm, n_s + 1)
+                self.tridag(a, b, c, f, fm, n_s + 1)
                 for j in range(1, n_s):
                     f[j] = fm[j]
         elif 'd' == bc and 'call' == self.stock.kind:  # Dirichlet Condition for call
             for i in range(n_t, 0, -1):
-                tridag(a, b, c, f, fm, n_s + 1)
+                self.tridag(a, b, c, f, fm, n_s + 1)
                 for j in range(1, n_s):
                     f[j] = fm[j]
                 f[n_s] = smax - k * math.exp(-r * (t - dt * i))
                 f[0] = 0
         elif 'd' == bc and 'put' == self.stock.kind:  # Dirichlet Condition for call
             for i in range(n_t, 0, -1):
-                tridag(a, b, c, f, fm, n_s + 1)
+                self.tridag(a, b, c, f, fm, n_s + 1)
                 for j in range(1, n_s):
                     f[j] = fm[j]
                 f[n_s] = 0
                 f[0] = k * math.exp(-r * (t - dt * i))
         elif 'm' == bc:  # my own solution
             for i in range(n_t, 0, -1):
-                tridag(a, b, c, f, fm, n_s + 1)
+                self.tridag(a, b, c, f, fm, n_s + 1)
                 for j in range(1, n_s):
                     f[j] = fm[j]
                 f[0] = f[0] * math.exp(r * dt)
                 f[n_s] = f[n_s] * math.exp(r * dt)
         elif '' == bc:  # no discounting
             for i in range(n_t, 0, -1):
-                tridag(a, b, c, f, fm, n_s + 1)
+                self.tridag(a, b, c, f, fm, n_s + 1)
                 for j in range(0, n_s + 1):
                     f[j] = fm[j]
                 # print(f)
