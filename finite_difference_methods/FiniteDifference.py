@@ -2,6 +2,60 @@ import math
 
 
 class FiniteDifference:
+
+    def get_parameters_form_stock(self, stock):
+        s = stock.S
+        k = stock.K
+        t = stock.T
+        r = stock.r
+        q = stock.d
+        sigma = stock.v
+
+        return s, k, t, r, q, sigma
+
+    def get_parameters(self, n_s, n_t, s, t, sigma):
+
+        smax = 2 * s
+
+        if n_s:
+            n_s = self.calcNS(n_t, smax, sigma, t)
+            n_s = n_s + (n_s % 2)
+        else:
+            n_s = n_s + (n_s % 2)
+
+        n_s = int(n_s)
+
+        dt = t / n_t
+        ds = 2 * s / n_s
+
+        return smax, n_s, dt, ds
+
+    def get_arrays(self, size, number):
+
+        ret = list()
+        for i in range(0, number):
+            ret.append([0] * (size + 1))
+
+        return tuple(ret)
+
+    def get_f_array(self, size, ds, k, kind):
+
+        f = [0] * (size + 1)
+
+
+        if 'call' == kind:
+            for j in range(0, size + 1):
+                s = j * ds
+                f[j] = max(s - k, 0)  # here you can omit the loop.
+        elif 'put' == kind:
+            for j in range(0, size + 1):
+                s = j * ds
+                f[j] = max(k - s, 0)  # here you can omit the loop.
+        else:
+            return False
+
+        return f
+
     def calcNS(self, n_t, Smax, vola, T):
         return int(math.log(Smax) / (vola * math.sqrt(3 * (T / n_t))))
 

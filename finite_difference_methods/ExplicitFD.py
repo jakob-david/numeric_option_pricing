@@ -25,45 +25,15 @@ class ExplicitFD(FiniteDifference):
         :return: The price of the stock after t time.
         """
 
-        s = self.stock.S
-        k = self.stock.K
-        t = self.stock.T
-        r = self.stock.r
-        q = self.stock.d
-        sigma = self.stock.v
+        s, k, t, r, q, sigma = self.get_parameters_form_stock(self.stock)
+        smax, n_s, dt, ds = self.get_parameters(n_s, n_t, s, t, sigma)
 
-        smax = 2 * s
+        fm, a, b, c = self.get_arrays(n_s, 4)
 
-        if n_s:
-            # n_s = (2*S/(math.sqrt(T/n_t)))#/self.fdm_factor
-            n_s = self.calcNS(n_t, smax, sigma, t)
-            n_s = n_s + (n_s % 2)
-        else:
-            n_s = n_s + (n_s % 2)
-
-        dt = t / n_t
-        ds = 2 * s / n_s
-
-        # print(n_s)
-        f = [0] * (n_s + 1)
-        a = [0] * (n_s + 1)
-        b = [0] * (n_s + 1)
-        c = [0] * (n_s + 1)
-        fm = [0] * (n_s + 1)
+        f = self.get_f_array(n_s, ds, k, self.stock.kind)
 
         q = 0  # possible addition
         sigma_sq = sigma * sigma
-
-        if 'call' == self.stock.kind:
-            for j in range(0, n_s + 1):
-                s = j * ds
-                f[j] = max(s - k, 0)  # here you can omit the loop.
-        elif 'put' == self.stock.kind:
-            for j in range(0, n_s + 1):
-                s = j * ds
-                f[j] = max(k - s, 0)  # here you can omit the loop.
-        else:
-            return False
 
         for j in range(0, n_s + 1):
             a[j] = 1 / (1 + r * dt) * (-.5 * (r - q) * j * dt + 0.5 * sigma_sq * j * j * dt)

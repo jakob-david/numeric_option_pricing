@@ -16,51 +16,15 @@ class CrankNicolson(FiniteDifference):
 
     def calculate(self, n_s, n_t, bc):
 
-        S = self.stock.S
-        K = self.stock.K
-        T = self.stock.T
-        r = self.stock.r
-        q = self.stock.d
-        sigma = self.stock.v
+        s, k, t, r, q, sigma = self.get_parameters_form_stock(self.stock)
+        smax, n_s, dt, ds = self.get_parameters(n_s, n_t, s, t, sigma)
 
-        Smax = 2 * S
+        fm, g, a, b, c, as_, bs, cs = self.get_arrays(n_s, 8)
 
-        if n_s == True:
-            # n_s = (2*S/(math.sqrt(T/n_t)))#/self.fdm_factor
-            n_s = self.calcNS(n_t, Smax, sigma, T)
-            n_s = n_s + (n_s % 2)
-        else:
-            n_s = n_s + (n_s % 2)
-
-        n_s = int(n_s)
-
-        dt = T / n_t
-        ds = 2 * S / n_s
-
-        f = [0] * (n_s + 1)
-        g = [0] * (n_s + 1)
-        a = [0] * (n_s + 1)
-        b = [0] * (n_s + 1)
-
-        c = [0] * (n_s + 1)
-        as_ = [0] * (n_s + 1)
-        bs = [0] * (n_s + 1)
-        cs = [0] * (n_s + 1)
-        fm = [0] * (n_s + 1)
+        f = self.get_f_array(n_s, ds, k, self.stock.kind)
 
         sigma_sq = sigma * sigma
-        q = 0  # Mögliche Ergänzung
-
-        if 'call' == self.stock.kind:
-            for j in range(0, n_s + 1):
-                S = j * ds
-                f[j] = max(S - K, 0)  # here you can omit the loop.
-        elif 'put' == self.stock.kind:
-            for j in range(0, n_s + 1):
-                S = j * ds
-                f[j] = max(K - S, 0)  # here you can omit the loop.
-        else:
-            return False
+        q = 0  # possible improvement
 
         for j in range(0, n_s + 1):
             a[j] = -.25 * j * dt * (j * sigma_sq - r)
@@ -107,24 +71,24 @@ class CrankNicolson(FiniteDifference):
         elif 'd' == bc and 'call' == self.stock.kind:  # Dirichlet Condition for call
             for i in range(n_t, 0, -1):
                 g[0] = 0
-                g[n_s] = Smax - K * math.exp(-r * (T - dt * i))
+                g[n_s] = smax - k * math.exp(-r * (t - dt * i))
                 for j in range(1, n_s):
                     g[j] = as_[j] * f[j - 1] + bs[j] * f[j] + cs[j] * f[j + 1]
                 self.tridag(a, b, c, g, fm, n_s + 1)
                 for j in range(1, n_s):
                     f[j] = fm[j]
                 f[0] = 0
-                f[n_s] = Smax - K * math.exp(-r * (T - dt * i))
+                f[n_s] = smax - k * math.exp(-r * (t - dt * i))
         elif 'd' == bc and 'put' == self.stock.kind:  # Dirichlet Condition for call
             for i in range(n_t, 0, -1):
-                g[0] = K * math.exp(-r * (T - dt * i))
+                g[0] = k * math.exp(-r * (t - dt * i))
                 g[n_s] = 0
                 for j in range(1, n_s):
                     g[j] = as_[j] * f[j - 1] + bs[j] * f[j] + cs[j] * f[j + 1]
                 self.tridag(a, b, c, g, fm, n_s + 1)
                 for j in range(1, n_s):
                     f[j] = fm[j]
-                f[0] = K * math.exp(-r * (T - dt * i))
+                f[0] = k * math.exp(-r * (t - dt * i))
                 f[n_s] = 0
         elif 'm' == bc:  # my own solution
             for i in range(n_t, 0, -1):

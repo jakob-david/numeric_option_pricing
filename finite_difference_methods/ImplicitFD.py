@@ -24,45 +24,14 @@ class ImplicitFD(FiniteDifference):
         :return: The price of the stock after t time.
         """
 
-        s = self.stock.S
-        k = self.stock.K
-        t = self.stock.T
-        r = self.stock.r
-        q = self.stock.d
-        sigma = self.stock.v
+        s, k, t, r, q, sigma = self.get_parameters_form_stock(self.stock)
+        smax, n_s, dt, ds = self.get_parameters(n_s, n_t, s, t, sigma)
+        fm, a, b, c = self.get_arrays(n_s, 4)
 
-        smax = 2 * s
-
-        if n_s:
-            n_s = self.calcNS(n_t, smax, sigma, t)
-            n_s = n_s + (n_s % 2)
-        else:
-            n_s = n_s + (n_s % 2)
-
-        n_s = int(n_s)
-
-        dt = t / n_t
-        ds = smax / n_s
-
-        f = [0] * (n_s + 1)
-        a = [0] * (n_s + 1)
-        b = [0] * (n_s + 1)
-        c = [0] * (n_s + 1)
-        fm = [0] * (n_s + 1)
+        f = self.get_f_array(n_s, ds, k, self.stock.kind)
 
         # print(n_s)
         # q = 0 # possible addition
-
-        if 'call' == self.stock.kind:
-            for j in range(0, n_s + 1):
-                s = j * ds
-                f[j] = max(s - k, 0)  # here you can omit the loop.
-        elif 'put' == self.stock.kind:
-            for j in range(0, n_s + 1):
-                s = j * ds
-                f[j] = max(k - s, 0)  # here you can omit the loop.
-        else:
-            return False
 
         # tri-diagonal matrix initialisation
         for j in range(0, n_s + 1):
