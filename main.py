@@ -1,11 +1,11 @@
-from classes.Stock import Stock
-from classes.Analytic import Analytic
-from classes.MonteCarlo import MonteCarlo
-from classes.BinomialTree import BinomialTree
-from classes.TrinomialTree import TrinomialTree
-from classes.ImplicitFD import ImplicitFD
-from classes.ExplicitFD import ExplicitFD
-from classes.CrankNicolson import CrankNicolson
+from general_classes.Stock import Stock
+from other_methods.Analytic import Analytic
+from other_methods.MonteCarlo import MonteCarlo
+from other_methods.BinomialTree import BinomialTree
+from other_methods.TrinomialTree import TrinomialTree
+from finite_difference_methods.ImplicitFD import ImplicitFD
+from finite_difference_methods.ExplicitFD import ExplicitFD
+from finite_difference_methods.CrankNicolson import CrankNicolson
 
 stock = Stock()
 stock.setKind('call')

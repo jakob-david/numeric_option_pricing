@@ -1,6 +1,6 @@
 import math
 
-from classes.FiniteDifference import FiniteDifference
+from finite_difference_methods.FiniteDifference import FiniteDifference
 
 
 class ExplicitFD(FiniteDifference):
