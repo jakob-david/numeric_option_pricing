@@ -18,9 +18,7 @@ class CrankNicolson(FiniteDifference):
 
         s, k, t, r, q, sigma = self.get_parameters_form_stock(self.stock)
         smax, n_s, dt, ds = self.get_parameters(n_s, n_t, s, t, sigma)
-
         fm, g, a, b, c, as_, bs, cs = self.get_arrays(n_s, 8)
-
         f = self.get_f_array(n_s, ds, k, self.stock.kind)
 
         sigma_sq = sigma * sigma

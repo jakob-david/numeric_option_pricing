@@ -27,9 +27,7 @@ class ExplicitFD(FiniteDifference):
 
         s, k, t, r, q, sigma = self.get_parameters_form_stock(self.stock)
         smax, n_s, dt, ds = self.get_parameters(n_s, n_t, s, t, sigma)
-
         fm, a, b, c = self.get_arrays(n_s, 4)
-
         f = self.get_f_array(n_s, ds, k, self.stock.kind)
 
         q = 0  # possible addition

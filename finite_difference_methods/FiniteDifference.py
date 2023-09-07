@@ -42,7 +42,6 @@ class FiniteDifference:
 
         f = [0] * (size + 1)
 
-
         if 'call' == kind:
             for j in range(0, size + 1):
                 s = j * ds
