@@ -25,24 +25,24 @@ class ExplicitFD(FiniteDifference):
         :return: The price of the stock after t time.
         """
 
-        S = self.stock.S
-        K = self.stock.K
-        T = self.stock.T
+        s = self.stock.S
+        k = self.stock.K
+        t = self.stock.T
         r = self.stock.r
         q = self.stock.d
         sigma = self.stock.v
 
-        smax = 2 * S
+        smax = 2 * s
 
-        if n_s == True:
+        if n_s:
             # n_s = (2*S/(math.sqrt(T/n_t)))#/self.fdm_factor
-            n_s = self.calcNS(n_t, smax, sigma, T)
+            n_s = self.calcNS(n_t, smax, sigma, t)
             n_s = n_s + (n_s % 2)
         else:
             n_s = n_s + (n_s % 2)
 
-        dt = T / n_t
-        ds = 2 * S / n_s
+        dt = t / n_t
+        ds = 2 * s / n_s
 
         # print(n_s)
         f = [0] * (n_s + 1)
@@ -51,17 +51,17 @@ class ExplicitFD(FiniteDifference):
         c = [0] * (n_s + 1)
         fm = [0] * (n_s + 1)
 
-        q = 0  # Mögliche Ergänzung
+        q = 0  # possible addition
         sigma_sq = sigma * sigma
 
         if 'call' == self.stock.kind:
             for j in range(0, n_s + 1):
-                S = j * ds
-                f[j] = max(S - K, 0)  # here you can omit the loop.
+                s = j * ds
+                f[j] = max(s - k, 0)  # here you can omit the loop.
         elif 'put' == self.stock.kind:
             for j in range(0, n_s + 1):
-                S = j * ds
-                f[j] = max(K - S, 0)  # here you can omit the loop.
+                s = j * ds
+                f[j] = max(k - s, 0)  # here you can omit the loop.
         else:
             return False
 
@@ -74,16 +74,16 @@ class ExplicitFD(FiniteDifference):
             # b[j] = 1-dt*(j*j*sigma_sq +r)
             # c[j] = .5*j*dt*(j*sigma_sq+r)
 
-        # Nemann
+        # von Neumann
         b[0] = b[0] + 2 * a[0]
         c[0] = c[0] - a[0]
 
         b[n_s] = b[n_s] + 2 * c[n_s]
         a[n_s] = a[n_s] - c[n_s]
 
-        # Lösen  # the switch is not yet testet
+        # the switch is not yet tested.
 
-        if bc == 'n':  # Neuman Condition
+        if bc == 'n':  # von Neumann Condition
             for i in range(n_t, 0, -1):
                 fm[0] = f[0] * b[0] + f[1] * c[0]
                 fm[n_s] = f[n_s] * b[n_s] + f[n_s - 1] * a[n_s]
@@ -94,7 +94,7 @@ class ExplicitFD(FiniteDifference):
 
         elif 'd' == bc and 'call' == self.stock.kind:  # Dirichlet Condition for call
             for i in range(n_t, 0, -1):
-                fm[n_s] = smax - K * math.exp(-r * (T - dt * i))
+                fm[n_s] = smax - k * math.exp(-r * (t - dt * i))
                 fm[0] = 0
                 for j in range(1, n_s):
                     fm[j] = a[j] * f[j - 1] + b[j] * f[j] + c[j] * f[j + 1]
@@ -104,7 +104,7 @@ class ExplicitFD(FiniteDifference):
         elif 'd' == bc and 'put' == self.stock.kind:  # Dirichlet Condition for call
             for i in range(n_t, 0, -1):
                 fm[n_s] = 0
-                fm[0] = K * math.exp(-r * (T - dt * i))
+                fm[0] = k * math.exp(-r * (t - dt * i))
                 for j in range(1, n_s):
                     fm[j] = a[j] * f[j - 1] + b[j] * f[j] + c[j] * f[j + 1]
                 for j in range(0, n_s + 1):
