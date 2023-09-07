@@ -13,6 +13,6 @@ B = BinomialTree(stock)
 T = TrinomialTree(stock)
 
 print(Ana.calculate())
-print(MC.calculate(10000))
+print(MC.calculate(1000))
 print(B.calculate(10))
 print(T.calculate(10))

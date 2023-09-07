@@ -12,16 +12,23 @@ class TrinomialTree:
 
         self.stock = stock
 
-    def calculate(self, N):
+    def calculate(self, n):
+        """
+        Calculates the price using a trinomial tree simulation.
 
-        S = self.stock.S
-        K = self.stock.K
+        :param n: The number of simulation steps.
+
+        :return: The price after t time.
+        """
+
+        s = self.stock.S
+        k = self.stock.K
         t = self.stock.T
         r = self.stock.r
         q = self.stock.d
         sigma = self.stock.v
 
-        dt = t / N
+        dt = t / n
         sigma_sqr = sigma * sigma
 
         u = math.exp(sigma * math.sqrt(3 * dt))
@@ -29,21 +36,21 @@ class TrinomialTree:
         p_u = 1 / 6 + math.sqrt(dt / (12 * sigma_sqr)) * (r - q - 0.5 * sigma_sqr)
         p_m = 2 / 3
         p_d = 1 / 6 - math.sqrt(dt / (12 * sigma_sqr)) * (r - q - 0.5 * sigma_sqr)
-        C = {}
+        c = {}
 
         if 'call' == self.stock.kind:
-            for m in range(0, N * 2 + 1):
-                C[(N, m)] = max(S * (u ** (m - N)) - K, 0)
+            for m in range(0, n * 2 + 1):
+                c[(n, m)] = max(s * (u ** (m - n)) - k, 0)
 
         elif 'put' == self.stock.kind:
-            for m in range(0, N * 2 + 1):
-                C[(N, m)] = max(K - S * (u ** (m - N)), 0)
+            for m in range(0, n * 2 + 1):
+                c[(n, m)] = max(k - s * (u ** (m - n)), 0)
 
         else:
             return False
 
-        for k in range(N - 1, -1, -1):
+        for k in range(n - 1, -1, -1):
             for m in range(0, k + k + 1):
-                C[(k, m)] = math.exp(-r * dt) * (
-                            p_u * C[(k + 1, m + 2)] + p_m * C[(k + 1, m + 1)] + p_d * C[(k + 1, m)])
-        return C[(0, 0)]
+                c[(k, m)] = math.exp(-r * dt) * (
+                            p_u * c[(k + 1, m + 2)] + p_m * c[(k + 1, m + 1)] + p_d * c[(k + 1, m)])
+        return c[(0, 0)]
