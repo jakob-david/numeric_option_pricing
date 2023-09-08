@@ -93,11 +93,11 @@ $$a=e^{(r-q)∆t}$$
 
 Hull (2015) specifies the formulas for working a binomial tree for American Options backwards. Because an American option can be exercised at any time a max function is needed at every node. For a call option this gives
 
-$$f_{i,j}=max\left\{ S_{0}u^{j}d^{i-j}-K, e^{-r\Delta t} \left [ pf_{i+1,j+1}+(1-p)f_{i+1,j}) \right]\right\}$$
+$$f_{i,j}=max\left\{ S_{0}u^{j}d^{i-j}-K, e^{-r\Delta t} ( pf_{i+1,j+1}+(1-p)f_{i+1,j})) \right\}$$
 
 and for a put option 
 
-$$f_{i,\ j}=\max{{K-\ S}_0u^jd^{i-j},\ e-r∆t[pfi+1,j+1+(1-p)fi+1,j]}$$
+$$f_{i,\ j}=\max{{K-\ S}_0u^jd^{i-j},\ e-r∆t(pfi+1,j+1+(1-p)fi+1,j)}$$
 
 In these equations $i$ is the time interval and $j$ identifies the different nodes per time interval. As an example, $S_0u^3$ from Figure 2 would be $f_{3,3}$. When evaluating a European option, the max function is not needed, and it is easy to see that 
 
