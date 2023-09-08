@@ -103,6 +103,26 @@ In these equations $i$ is the time interval and $j$ identifies the different nod
 
 $$f_{i,j}=e^{-r\Delta t}pf_{i+1,j+1}+(1-p)f_{i+1,j}$$
 
+### Trinomial Tree
+The trinomial tree approach is very similar to the binomial tree approach. The main difference is that one node expands to three new nodes with each new time step as shown in Figure 3. Because of this also more nodes are merging because they are the same. Because now the value of the option cannot only go up and down but can also stay the same, new formulas are needed (Hull, 2015). The $u$ and $d$ are calculated the same way as before.
+
+$$p_d=-∆t12σ2r-q-σ22+16$$
+
+$$p_m=\frac{2}{3}$$
+
+$$p_u=∆t12σ2r-q-σ22+16$$
+
+The option price at the last layer of the tree is valued exactly the same as for the binomial tree described above. The formula for valuing back a European option is quite similar to the formula for the binomial tree (Hull, 2015)
+
+$$f_{i,\ j}=e-r∆t pdfi+1,j+pmfi+1,j+1+pufi+1,j+2$$
+
+<p align="center">
+    <img width="500" src="./zz_pictures_for_readme/picture_3.png" alt="Figure 3"><br>
+    <em>
+    Figure 3: Illustration of a trinomial tree used for option pricing. (Hull, 2015)
+    </em>
+</p>
+
 ### Monte Carlo Simulation
 The way of pricing an option with a Monte Carlo simulation is quite different to the other ways of option pricing. In contrast to the other methods discussed in this paper, it is not needed to calculate nodes or build a tree in some kind. The procedure is quite simple and can easily be implemented in Microsoft Excel as shown by Hull (2015). First, one calculates the value of the stock after some time 𝑡. For doing this the following formula is needed (Hull, 2015).
 
