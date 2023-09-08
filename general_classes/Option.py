@@ -1,8 +1,16 @@
-class Stock:
+import math
+
+import numpy as np
+from matplotlib import pyplot as plt
+from scipy.stats import norm
+import random
+
+
+class Option:
 
     def __init__(self):
         """
-        A class which holds all relevant parameters of a stock.
+        A class which holds all relevant parameters of an option.
         """
 
         self.s = 42  # spot price
@@ -62,6 +70,42 @@ class Stock:
         """
 
         self.s = s
+
+    def generate_random_stock_price_path(self, n):
+
+        s = self.s
+        t = self.t
+        r = self.r
+        q = self.d
+        sigma = self.v
+
+        f = [0] * (n + 1)
+        dt = t / n
+
+        for i in range(0, n):
+            f[i] = s
+            ds = (r - q) * dt * s + sigma * math.sqrt(dt) * s * norm.ppf(random.uniform(0, 1))
+            s = s + ds
+
+        f[n] = s
+
+        return f
+
+    def plot_random_stock_price_path(self, n):
+
+        f = self.generate_random_stock_price_path(n)
+        idx = np.zeros_like(f)
+
+        for i in range(0, len(idx)):
+            idx[i] = i
+
+        plt.plot(idx, f)
+
+        plt.xlabel("time steps")
+        plt.ylabel("stock price")
+
+        plt.show()
+        plt.close()
 
     def __str__(self):
         """
