@@ -9,7 +9,7 @@ class ExplicitFD(FiniteDifference):
         """
         Solves the Black–Scholes equation using an explicit finite difference method.
 
-        :param stock: The stock for witch the future price should be calculated. (class Stock)
+        :param stock: the stock for witch the future price should be calculated. (class Stock)
         """
 
         self.stock = stock
@@ -18,9 +18,9 @@ class ExplicitFD(FiniteDifference):
         """
         Calculates the price using an explicit finite difference method.
 
-        :param n_s: The number of starting prices.
-        :param n_t: The number of time steps.
-        :param bc:  The type of border conditions. (d...Dirichlet, n...von Neumann)
+        :param n_s: the number of starting prices.
+        :param n_t: the number of time steps.
+        :param bc:  the type of border conditions. (d...Dirichlet, n...von Neumann)
 
         :return: The price of the stock after t time.
         """
