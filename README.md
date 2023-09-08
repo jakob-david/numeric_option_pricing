@@ -5,14 +5,11 @@
 ### Wiener Process 
 A process where the value of a variable changes over time in an uncertain way is called a stochastic process. Furthermore, a Markov process is a special kind of stochastic process. At this particular process only the current value of the variable is relevant for the prediction of the future value. A stock price is thought to follow a Markov process (Hull, 2015).
 
-According to Hull a process is a Wiener process if two properties hold true: 
+According to Hull (Hull, 2015: p. 304) a process is a Wiener process if two properties hold true: 
 
-“
 - Property 1: The change $∆z$ during a small period of time $∆t$ is $\Delta z = \epsilon \sqrt{\Delta t}$, where $\epsilon$ has a standard normal distribution $\phi(0,1)$.
 
 - Property 2: 	The values of $∆z$ for any two different short intervals of time are independent. 
-
-“(Hull, 2015: p. 304)
 
 A generalized Wiener Process has the following form (Hull, 2015)
 
