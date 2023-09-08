@@ -136,7 +136,7 @@ The problem with this equation is 𝜖, since this is not an exact number. 𝜖 
 Contrary to the methods described above these are a bit more complex. The used techniques are used in physics as well. Instead of calculating a tree or simulating a normal derivation these processes rely on building a grid as shown in Figure 4. 
 
 <p align="center">
-    <img width="400" src="./zz_pictures_for_readme/picture_4.png" alt="Figure 3"><br>
+    <img width="300" src="./zz_pictures_for_readme/picture_4.png" alt="Figure 3"><br>
     <em>
     Figure 4: Illustration of a grid that is used for calculating the price of an option using finite difference methods (Hull, 2015)
     </em>
