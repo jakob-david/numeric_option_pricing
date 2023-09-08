@@ -158,3 +158,15 @@ $$f\left(S_{max},t\right)=0$$
 
 A third option also described by Zhang (2017) are Neumann conditions which are the partial derivative of the option at the boundary and according to him incline to be more accurate. To set the conditions the edges are set in a way that the following formulas hold true, where M is the number of prices used. 
 
+$$f\left(0,j\right)-2f\left(1,j\right)+f\left(2,j\right)=0$$
+
+$$f\left(M-2,j\right)-2f\left(M-1,j\right)+f\left(M,j\right)=0$$
+
+For calculating the points inside the grid there are many different ways. In this paper only three are described, namely the implicit finite difference method, the explicit finite difference method and the Crank-Nicolson method, where the last one is a combination of the first two. The different methods are illustrated in Figure 5. 
+
+<p align="center">
+    <img width="300" src="./zz_pictures_for_readme/picture_5.png" alt="Figure 3"><br>
+    <em>
+    Figure 5: Illustration of the different finite difference methods (Zhang, 2017)
+    </em>
+</p>
