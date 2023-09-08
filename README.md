@@ -43,6 +43,13 @@ Supposing one has a process like above, the variable $x$ has a drift rate of $a(
 
 $$dG=\ \left(\frac{\partial G}{\partial x}a+\frac{\partial G}{\partial t}+\frac{1}{2}\frac{\partial^2G}{\partial x^2}b^2\right)dt+\frac{\partial G}{\partial x}b\ dz$$
 
+### Black-Scholes-Merton Model
+As shown before a Wiener process can be used to simulate the path of a stock price. This is shown in Figure 1. Furthermore, a stock can as well follow an Itô’s process. However, to do so the differential equation needs to be adapted. By combining the Wiener process with it one can obtain the Black-Scholes-Merton differential equation shown below. (Hull, 2015)
+
+$$df=\ \left(\frac{\partial f}{\partial S}\mu\ S+\frac{\partial f}{\partial t}+\frac{1}{2}\frac{\partial^2f}{\partial x^2}\sigma^2S^2\right)dt+\frac{\partial f}{\partial x}\sigma\ S\ dz$$
+
+where $\mu$ is the expected return, $\sigma$ the volatility of the stock and $S$ the current stock price. The equation can also be written discretely. Also, the same assumption must be made when moving form $t$ to $t+∆t$.
+
 ## Numerical Methods
 
 ### Monte Carlo Simulation
