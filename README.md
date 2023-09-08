@@ -50,6 +50,14 @@ $$df=\ \left(\frac{\partial f}{\partial S}\mu\ S+\frac{\partial f}{\partial t}+\
 
 where $\mu$ is the expected return, $\sigma$ the volatility of the stock and $S$ the current stock price. The equation can also be written discretely. Also, the same assumption must be made when moving form $t$ to $t+∆t$.
 
+$$d∆f= ∂f∂Sμ S+∂f∂t+12∂2f∂x2σ2S2∆t+∂f∂xσ S  ϵ∆t$$
+
+Because these equations are differential equations, every formula that solves the equation represents the change of value in an option price according to an Itô process. For European call ($c$) or put ($p$) options with a known dividend yield this equation actually can be solved analytically with the result shown below (Morton, 1973) (Hull, 2015).
+
+$$c_{price}=\ S_{0\ }e^{-qT}N\left(d_1\right)-Ke^{-eT}\ N(d_2)$$
+
+$$p_{price}=\ {Ke^{-eT}\ N\left(d_2\right)-S}_{0\ }e^{-qT}N\left(d_1\right)$$
+
 ## Numerical Methods
 
 ### Monte Carlo Simulation
