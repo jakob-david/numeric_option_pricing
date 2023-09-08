@@ -147,3 +147,5 @@ Oppositely to, for instance, the binomial tree not only one stock price is taken
 The upper and lower border also have to be set. For doing this there are different kinds of approaches. The first one which is described by Ødegaard (2014) is simply setting the lower edge to $0$ and the upper edge to $S_{max}$ when pricing a call-option and exactly the other way around when pricing a put-option. Another variant for setting the border conditions is described by Zhang (2017) and is called Dirichlet Condition. Hereby the edges for a call option are set to 
 
 $$f\left(0,t\right)=0$$
+
+$$f\left(S_{max},t\right)=S_{max}-Ke^{-(T-t)}$$
