@@ -27,6 +27,22 @@ Here $∆S$ is the change in the stock price $u$ the expected return and $\sigma
     Figure 1: A generated random example of the change of a stock price.
     </em>
 </p>
+
+### Itô’s Lemma 
+Based on the Wiener process another more complex process can be defined. This one is called an Itô’s process and is defined as follows (Hull, 2015)
+
+$$dx=a\left(x,\ t\right)dt+b\left(x,t\right)\ dz$$
+
+This time $a$ and $b$ are not constant but functions from $x$ and t. It can also be written in its discrete form 
+
+$$∆x=a(x,t) ∆t+b(x,t) ϵ∆t$$
+
+This equation of course assumes that the drift and the variance rate keep constant when moving form $t$ to $t+∆t$ (Hull, 2015).
+
+Supposing one has a process like above, the variable $x$ has a drift rate of $a(x,t)$ and a variance of rate described by $b(x,t)$. Itô (1951) found that any function $G(x,t)$ follows the process
+
+$$dG=\ \left(\frac{\partial G}{\partial x}a+\frac{\partial G}{\partial t}+\frac{1}{2}\frac{\partial^2G}{\partial x^2}b^2\right)dt+\frac{\partial G}{\partial x}b\ dz$$
+
 ## Numerical Methods
 
 ### Monte Carlo Simulation
