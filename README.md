@@ -114,7 +114,7 @@ $$p_u=∆t12σ2r-q-σ22+16$$
 
 The option price at the last layer of the tree is valued exactly the same as for the binomial tree described above. The formula for valuing back a European option is quite similar to the formula for the binomial tree (Hull, 2015)
 
-$$f_{i,\ j}=e-r∆t pdfi+1,j+pmfi+1,j+1+pufi+1,j+2$$
+$$f_{i,j}=e^{-r\Delta t}p_{d}f_{i+1,j+1}+p_{m}f_{i+1,j+1}+p_{u}f_{i+1,j+2}$$
 
 <p align="center">
     <img width="500" src="./zz_pictures_for_readme/picture_3.png" alt="Figure 3"><br>
