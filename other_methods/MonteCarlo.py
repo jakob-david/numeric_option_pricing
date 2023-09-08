@@ -23,9 +23,9 @@ class MonteCarlo:
         :return: The price after t time.
         """
 
-        s = self.stock.S
-        k = self.stock.K
-        t = self.stock.T
+        s = self.stock.s
+        k = self.stock.k
+        t = self.stock.t
         r = self.stock.r
         d = self.stock.d
         vol = self.stock.v

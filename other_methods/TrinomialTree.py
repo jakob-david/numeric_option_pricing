@@ -21,9 +21,9 @@ class TrinomialTree:
         :return: The price after t time.
         """
 
-        s = self.stock.S
-        k = self.stock.K
-        t = self.stock.T
+        s = self.stock.s
+        k = self.stock.k
+        t = self.stock.t
         r = self.stock.r
         q = self.stock.d
         sigma = self.stock.v

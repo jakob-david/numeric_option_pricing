@@ -21,9 +21,9 @@ class FiniteDifference:
             - sigma - volatility
         """
 
-        s = stock.S
-        k = stock.K
-        t = stock.T
+        s = stock.s
+        k = stock.k
+        t = stock.t
         r = stock.r
         q = stock.d
         sigma = stock.v
