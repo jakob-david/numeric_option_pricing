@@ -89,7 +89,7 @@ $$d=e-σ∆t$$
 
 where 
 
-$$a=e(r-q)∆t$$
+$$a=e^{(r-q)∆t}$$
 
 Hull (2015) specifies the formulas for working a binomial tree for American Options backwards. Because an American option can be exercised at any time a max function is needed at every node. For a call option this gives
 
