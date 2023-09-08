@@ -72,6 +72,13 @@ class Option:
         self.s = s
 
     def generate_random_stock_price_path(self, n):
+        """
+        Generates a random walk of the stock to which the option is bound. Up to the time t.
+
+        :param n: the number of time steps.
+
+        :return: array with the stock prices at each time step
+        """
 
         s = self.s
         t = self.t
@@ -92,6 +99,13 @@ class Option:
         return f
 
     def plot_random_stock_price_path(self, n):
+        """
+        Plots a random walk of the stock to which the option is bound. Up to the time t.
+
+        :param n: the number of time steps
+
+        :return: plot
+        """
 
         f = self.generate_random_stock_price_path(n)
         idx = np.zeros_like(f)

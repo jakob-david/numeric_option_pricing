@@ -4,7 +4,7 @@ from general_classes.Simulation import Simulation
 
 my_sim = Simulation(Option())
 
-Option().plot_random_stock_price_path(100)
+# Option().plot_random_stock_price_path(100)
 
 # print(my_sim.calculate_analytic())
 
