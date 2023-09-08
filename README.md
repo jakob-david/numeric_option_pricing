@@ -69,6 +69,40 @@ In these equations $S_0$ is the spot price of the stock, $K$ is the strike price
 ## Numerical Methods
 It is very easy to calculate the current price of a European option since it is possible to find a suitable analytical solution for equation. As mentioned earlier this is not always the case. For instance, an American option can be exercised at any time and thus, as of today, an analytical solution for the Black-Scholes-Morten differential equation is known. For problems like this it is needed to use numerical methods. These were described already shortly above. To use this method’s formula the discrete version is needed. All the methods described in this section were coded in the course of this paper and can be found in Appendix A. Among others Press (1992), Ødegaard (2014) and (Hull, 2015) were used for the coding. 
 
+### Binomial Tree
+The binomial tree approach is illustrated in Figure 2. The root of the tree is the spot price. Now there are two possibilities. Either the stock moves up with a certain probability or moves down with a certain probability. From the so obtained nodes the stock can again either go up or down. This goes on as long as it is wanted. Since it makes no difference whether the stock moves first up and then down or vice versa the two nodes merge. For coding the Algorithm Thurman (2018) was used. 
+
+<p align="center">
+    <img width="500" src="./zz_pictures_for_readme/picture_2.png" alt="Figure 3"><br>
+    <em>
+    Figure 2: Illustration of a binomial tree used for option pricing. (Hull, 2015)
+    </em>
+</p>
+
+Since the values for $S_0$ are the same in the last layer the value of the option for that layer can be calculated with $\max\funcapply(S_ou^jd^{N-1}-K,\ 0)$ for a call option and $\max\funcapply(K-S_ou^jd^{N-1},\ 0)$ for a put option. This can be derived from the equations. The next step is not that easy. Now it is needed to go back step by step to the beginning of the binomial tree. To give an example, to obtain the value of $S_0u^3$ from Figure 2, $S_0u^4$ and $S_0u^2$ are needed. In the end the value of the root node is obtained which is an approximation for the real value of the option. The exact formulas can also be derived. (Hull, 2015)
+
+$$p=\frac{a-d}{u-d}$$
+
+$$u=eσ∆t$$
+
+$$d=e-σ∆t$$
+
+where 
+
+$$a=e(r-q)∆t$$
+
+Hull (2015) specifies the formulas for working a binomial tree for American Options backwards. Because an American option can be exercised at any time a max function is needed at every node. For a call option this gives
+
+$$f_{i,\ j}=\max\funcapply{S_0u^jd^{i-j}-K,\ e-r∆t[pfi+1,j+1+(1-p)fi+1,j]}$$
+
+and for a put option 
+
+$$f_{i,\ j}=\max\funcapply{{K-\ S}_0u^jd^{i-j},\ e-r∆t[pfi+1,j+1+(1-p)fi+1,j]}$$
+
+In these equations $i$ is the time interval and $j$ identifies the different nodes per time interval. As an example, $S_0u^3$ from Figure 2 would be $f_{3,3}$. When evaluating a European option, the max function is not needed, and it is easy to see that 
+
+$$f_{i,\ j}=e-r∆t pfi+1,j+1+(1-p)fi+1,j$$
+
 ### Monte Carlo Simulation
 The way of pricing an option with a Monte Carlo simulation is quite different to the other ways of option pricing. In contrast to the other methods discussed in this paper, it is not needed to calculate nodes or build a tree in some kind. The procedure is quite simple and can easily be implemented in Microsoft Excel as shown by Hull (2015). First, one calculates the value of the stock after some time 𝑡. For doing this the following formula is needed (Hull, 2015).
 
