@@ -213,3 +213,4 @@ $${c^\ast}_j=\frac{1}{4}j∆t(jσ2+(r-d))$$
 
 ## Bibliography
 - Hull, J.C., (2015). Options, Futures, and Other Derivates. 9th ed. New Jersey: Pearson Education, Inc.
+- Itô, K., (1951). On Stochastic Differential Equations. New York: American Mathematical Society.
