@@ -156,8 +156,57 @@ class Simulation:
 
         self.plot_fd(ns_min, ns_max, nt_min, nt_max, bc, difference, CrankNicolson(self.stock).calculate)
 
+    def plot_monte_carlo(self, nt_min, nt_max, difference=True):
+
+        if nt_min < 1:
+            print("Error: minimum is one run")
+            return
+
+        self.plot(nt_min, nt_max, difference, MonteCarlo(self.stock).calculate)
+
+    def plot_binomial_tree(self, nt_min, nt_max, difference=True):
+
+        if nt_min < 1:
+            print("Error: minimum is one timestep")
+            return
+
+        self.plot(nt_min, nt_max, difference, BinomialTree(self.stock).calculate)
+
+    def plot_trinomial_tree(self, nt_min, nt_max, difference=True):
+
+        if nt_min < 1:
+            print("Error: minimum is one timestep")
+            return
+
+        self.plot(nt_min, nt_max, difference, TrinomialTree(self.stock).calculate)
+
     # plot helper functions
     # --------------------------------------
+    def plot(self, nt_min, nt_max, difference, function):
+
+        if difference:
+            analytic = Analytic(self.stock).calculate()
+        else:
+            analytic = 0
+
+        y = np.zeros(nt_max-nt_min+1)
+        x = np.zeros(nt_max-nt_min+1)
+
+        for i in range(nt_min, nt_max+1):
+            y[i-1] = function(i) - analytic
+            x[i-1] = i
+
+        plt.plot(x, y)
+
+        plt.xlabel("number of time steps")
+        if difference:
+            plt.ylabel("difference")
+        else:
+            plt.ylabel("price")
+
+        plt.show()
+        plt.close()
+
     def plot_fd(self, ns_min, ns_max, nt_min, nt_max, bc, difference, function):
         """
         Actually handles the plotting routine for finite difference methods.
@@ -172,6 +221,14 @@ class Simulation:
 
         :return: plot
         """
+
+        if nt_min < 1:
+            print("Error: minimum is one time step")
+            return
+
+        if ns_min < 1:
+            print("Error: minimum is one spot price")
+            return
 
         matrix = np.zeros((ns_max-ns_min+1, nt_max-nt_min+1))
 
@@ -196,8 +253,8 @@ class Simulation:
         # Plot a basic wireframe.
         ax.plot_wireframe(x, y, z, rstride=1, cstride=1)
 
-        plt.xlabel("time")
-        plt.ylabel("spot prices")
+        plt.xlabel("number of time steps")
+        plt.ylabel("number of spot prices")
 
         if difference:
             ax.set_zlabel("difference")
@@ -205,3 +262,4 @@ class Simulation:
             ax.set_zlabel("price")
 
         plt.show()
+        plt.close()
