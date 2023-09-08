@@ -7,6 +7,7 @@ A process where the value of a variable changes over time in an uncertain way is
 
 According to Hull a process is a Wiener process if two properties hold true: 
 
+\indent
 “Property 1: The change $∆z$ during a small period of time $∆t$ is
 
 $$\Delta z = \epsilon \sqrt{\Delta t}$$
