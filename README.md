@@ -106,15 +106,17 @@ $$f_{i,j}=e^{-r\Delta t}pf_{i+1,j+1}+(1-p)f_{i+1,j}$$
 ### Trinomial Tree
 The trinomial tree approach is very similar to the binomial tree approach. The main difference is that one node expands to three new nodes with each new time step as shown in Figure 3. Because of this also more nodes are merging because they are the same. Because now the value of the option cannot only go up and down but can also stay the same, new formulas are needed (Hull, 2015). The $u$ and $d$ are calculated the same way as before.
 
-$$p_d=-∆t12σ2r-q-σ22+16$$
+$$p_{d}=-\sqrt{\frac{\Delta t}{12 \sigma^{2}}}\left( r-q-\frac{\sigma^{2}}{2} \right)+\frac{1}{6}$$
 
 $$p_m=\frac{2}{3}$$
 
-$$p_u=∆t12σ2r-q-σ22+16$$
+$$p_{u}=\sqrt{\frac{\Delta t}{12 \sigma^{2}}}\left( r-q-\frac{\sigma^{2}}{2} \right)+\frac{1}{6}$$
 
 The option price at the last layer of the tree is valued exactly the same as for the binomial tree described above. The formula for valuing back a European option is quite similar to the formula for the binomial tree (Hull, 2015)
 
 $$f_{i,j}=e^{-r\Delta t}p_{d}f_{i+1,j+1}+p_{m}f_{i+1,j+1}+p_{u}f_{i+1,j+2}$$
+
+<br>
 
 <p align="center">
     <img width="500" src="./zz_pictures_for_readme/picture_3.png" alt="Figure 3"><br>
