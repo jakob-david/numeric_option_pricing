@@ -165,8 +165,10 @@ $$f\left(M-2,j\right)-2f\left(M-1,j\right)+f\left(M,j\right)=0$$
 For calculating the points inside the grid there are many different ways. In this paper only three are described, namely the implicit finite difference method, the explicit finite difference method and the Crank-Nicolson method, where the last one is a combination of the first two. The different methods are illustrated in Figure 5. 
 
 <p align="center">
-    <img width="300" src="./zz_pictures_for_readme/picture_5.png" alt="Figure 3"><br>
+    <img width="350" src="./zz_pictures_for_readme/picture_5.png" alt="Figure 3"><br>
     <em>
     Figure 5: Illustration of the different finite difference methods (Zhang, 2017)
     </em>
 </p>
+
+The implicit procedure is using $f\left(i,j+1\right)$ to in some way build equations for $f\left(i-1,j\right)$, $\ f\left(i,j\right)$ and $f\left(i+1,j\right)4. When doing this for every $f$ at one layer a set of linear equations is obtained. This set can be solved algebraically and the values for the layer one step further left can be calculated implicitly. The need of solving a set of linear equations can be omitted by calculating $f(i,j)$ explicitly with $f\left(i-1,j+1\right)$, $f\left(i,j+1\right)$ and $f\left(i+1,j+1\right)$. Using this process is computationally more efficient, but it is not as robust as the implicit method (Hull, 2015). About the last variant Hull (2015) writes very little. According to him this technique is the average of the implicit and explicit method. This can be explained with the trapezoidal formula. 
