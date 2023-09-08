@@ -17,12 +17,12 @@ $$dx=a\ dt+b\ dz$$
 
 In this case $a$ and $b$ are constant. The term $a\ ∆t$ is known to be the drift rate and $b\ \epsilon∆t$ as the variance rate. One can apply this process to a stock to assume the path of a stock price (Hull, 2015): 
 
-$$dS=\muSdt+\sigma dz$$
+$$dS=\mu Sdt+\sigma dz$$
 
 Here $∆S$ is the change in the stock price $u$ the expected return and $\sigma$ the volatility of the stock. Using this formula and a form of Monte Carlo simulation one can generate a random outcome of one process for a stock price (Hull, 2015) as is shown in Figure 1. 
 
 <p align="center">
-    <img src="./zz_pictures_for_readme/picture_1.png" alt="Figure 3"><br>
+    <img width="600" src="./zz_pictures_for_readme/picture_1.png" alt="Figure 3"><br>
     <em>
     Figure 1: A generated random example of the change of a stock price.
     </em>
