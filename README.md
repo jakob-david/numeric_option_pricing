@@ -188,3 +188,7 @@ $$c_j=-\frac{1}{2}\left(r-q\right)j∆t-\frac{1}{2}σ^{2}j^{2}∆t$$
 The Formula for the explicit method also can be derived as follows (Hull, 2015)
 
 $$f_{i,j}=a_{j}^{\*}f_{i+1,j-1}+b_{j}^{\*}f_{i,j+1}+c^{\*}_{j+1,i+1}$$
+
+where 
+
+$${a^\ast}_j=\ 11+r∆t-12r-qj∆t+12σ2j2∆t$$
