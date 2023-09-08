@@ -143,3 +143,7 @@ Contrary to the methods described above these are a bit more complex. The used t
 </p>
 
 Oppositely to, for instance, the binomial tree not only one stock price is taken into account, but a certain number of prices between $0$ and $S_{max}$. The $S_{max}$ can be chosen freely. However, it seems simplest to define $S_{max}$ as $2S_0$ since then $S_0$ is exactly in the middle of the grid. The time steps $∆t$ are shown on the horizontal axis. At the end of the grid the option price is evaluated by $max(j∆S-K,0)$ for a call-option and $max(K-j∆S,0)$ for a put option (Hull, 2015) (Ødegaard, 2014). Specially attention should be drawn to the fact that in this case no kind of discountation is made.
+
+The upper and lower border also have to be set. For doing this there are different kinds of approaches. The first one which is described by Ødegaard (2014) is simply setting the lower edge to $0$ and the upper edge to $S_{max}$ when pricing a call-option and exactly the other way around when pricing a put-option. Another variant for setting the border conditions is described by Zhang (2017) and is called Dirichlet Condition. Hereby the edges for a call option are set to 
+
+$$f\left(0,t\right)=0$$
