@@ -191,4 +191,10 @@ $$f_{i,j}=a_{j}^{\*}f_{i+1,j-1}+b_{j}^{\*}f_{i,j+1}+c^{\*}_{j+1,i+1}$$
 
 where 
 
-$${a^\ast}_j=\ 11+r∆t-12r-qj∆t+12σ2j2∆t$$
+$$a_{j}^{*} = \frac{1}{1+r\Delta t}\left( -\frac{1}{2}(r-q)i\Delta t+\frac{1}{2}\sigma^{2}j^{2}\Delta t\right)$$
+
+$$b_{j}^{*} = \frac{1}{1+r\Delta t} (1-\sigma^{2}j^{2}\Delta t)$$
+
+$$a_{j}^{*} = \frac{1}{1+r\Delta t}\left( \frac{1}{2}(r-q)i\Delta t+\frac{1}{2}\sigma^{2}j^{2}\Delta t\right)$$
+
+If using the Crank-Nicolson method firstly a vector is calculated using the explicit method. This vector is then used to calculate the results with the implicit method. The formulas are very similar to the ones above. However, $a_j$, $b$, $c_j$, ${a^\ast}_j$, ${b^\ast}_j$ and ${c^\ast}_j$ need to be changed (Zhang, 2017). The formulas are slightly adapted to fit the equations above and are adapted to include the dividend yield. 
