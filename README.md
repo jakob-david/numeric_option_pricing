@@ -22,7 +22,7 @@ $$dS=\mu Sdt+\sigma dz$$
 Here $∆S$ is the change in the stock price $u$ the expected return and $\sigma$ the volatility of the stock. Using this formula and a form of Monte Carlo simulation one can generate a random outcome of one process for a stock price (Hull, 2015) as is shown in Figure 1. 
 
 <p align="center">
-    <img width="600" src="./zz_pictures_for_readme/picture_1.png" alt="Figure 3"><br>
+    <img width="500" src="./zz_pictures_for_readme/picture_1.png" alt="Figure 3"><br>
     <em>
     Figure 1: A generated random example of the change of a stock price.
     </em>
