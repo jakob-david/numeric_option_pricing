@@ -179,8 +179,8 @@ $$a_jf_{i,j-1}+b_jf_{i,j}+c_jf_{i,j+1}=\ f_{i+1,j}$$
 
 where 
 
-$$a_j=\frac{1}{2}\left(r-q\right)j∆t-12σ^{2}j^{2}∆t$$
+$$a_j=\frac{1}{2}\left(r-q\right)j∆t-\frac{1}{2}σ^{2}j^{2}∆t$$
 
 $$b_j=1+\sigma^2j^2∆t+r∆t$$
 
-$$c_j=-\frac{1}{2}\left(r-q\right)j∆t-12σ^{2}j^{2}∆t$$
+$$c_j=-\frac{1}{2}\left(r-q\right)j∆t-\frac{1}{2}σ^{2}j^{2}∆t$$
