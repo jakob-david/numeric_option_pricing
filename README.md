@@ -184,3 +184,7 @@ $$a_j=\frac{1}{2}\left(r-q\right)j∆t-\frac{1}{2}σ^{2}j^{2}∆t$$
 $$b_j=1+\sigma^2j^2∆t+r∆t$$
 
 $$c_j=-\frac{1}{2}\left(r-q\right)j∆t-\frac{1}{2}σ^{2}j^{2}∆t$$
+
+The Formula for the explicit method also can be derived as follows (Hull, 2015)
+
+$$f_{i,j}=a_{j}^{\*}f_{i+1,j-1}+b_{j}^{\*}f_{i,j+1}+c^{\*}_{j+1,i+1}$$
