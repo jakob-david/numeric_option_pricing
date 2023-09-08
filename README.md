@@ -83,9 +83,9 @@ Since the values for $S_0$ are the same in the last layer the value of the optio
 
 $$p=\frac{a-d}{u-d}$$
 
-$$u=eσ∆t$$
+$$u=e^{σ∆t}$$
 
-$$d=e-σ∆t$$
+$$d=e^{-σ∆t}$$
 
 where 
 
