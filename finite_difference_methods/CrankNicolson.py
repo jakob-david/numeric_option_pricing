@@ -1,4 +1,5 @@
 import math
+import numpy as np
 
 from finite_difference_methods.FiniteDifference import FiniteDifference
 
@@ -15,11 +16,20 @@ class CrankNicolson(FiniteDifference):
         self.stock = stock
 
     def calculate(self, n_s, n_t, bc):
+        """
+        Calculates the price after t time using the Crank-Nicolson method.
+
+        :param n_s: the number of spot prices
+        :param n_t: the number of time steps
+        :param bc: the type of border conditions (d...Dirichlet, n...von Neumann)
+
+        :return: the price after t time
+        """
 
         s, k, t, r, q, sigma = self.get_parameters_form_stock(self.stock)
         smax, n_s, dt, ds = self.get_parameters(n_s, n_t, s, t, sigma)
         fm, g, a, b, c, as_, bs, cs = self.get_arrays(n_s, 8)
-        f = self.get_f_array(n_s, ds, k, self.stock.kind)
+        f = self.get_initial_array(n_s, ds, k, self.stock.kind)
 
         sigma_sq = sigma * sigma
         q = 0  # possible improvement
@@ -34,14 +44,14 @@ class CrankNicolson(FiniteDifference):
             cs[j] = .25 * j * dt * (j * sigma_sq + r)
 
         if "n" == bc:
-            # Nemann Impl
+            # von Neumann implicit
             b[0] = b[0] + 2 * a[0]
             c[0] = c[0] - a[0]
 
             b[n_s] = b[n_s] + 2 * c[n_s]
             a[n_s] = -c[n_s] + a[n_s]
 
-            # Nemann Expl
+            # von Neumann explicit
             bs[0] = bs[0] + 2 * as_[0]
             cs[0] = -as_[0] + cs[0]
 
@@ -57,9 +67,9 @@ class CrankNicolson(FiniteDifference):
             b[n_s] = 1
             a[n_s] = 0
 
-        if 'n' == bc:  # Neuman Condition
+        if 'n' == bc:  # von Neumann Condition
             for i in range(n_t, 0, -1):
-                g[0] = f[0] * b[0] + f[1] * c[0]  # Die Randbedinungen müssen manuel gesetzt werden.
+                g[0] = f[0] * b[0] + f[1] * c[0]  # The border conditions need to be set manually.
                 g[n_s] = f[n_s] * b[n_s] + f[n_s - 1] * a[n_s]
                 for j in range(1, n_s):
                     g[j] = as_[j] * f[j - 1] + bs[j] * f[j] + cs[j] * f[j + 1]

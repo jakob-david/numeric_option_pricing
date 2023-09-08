@@ -17,17 +17,17 @@ class ImplicitFD(FiniteDifference):
         """
         Calculates the price using an implicit finite difference method.
 
-        :param n_s: The number of starting prices.
-        :param n_t: The number of time steps.
-        :param bc:  The type of border conditions. (d...Dirichlet, n...von Neumann)
+        :param n_s: the number of starting prices.
+        :param n_t: the number of time steps.
+        :param bc:  the type of border conditions. (d...Dirichlet, n...von Neumann)
 
-        :return: The price of the stock after t time.
+        :return: the price of the stock after t time.
         """
 
         s, k, t, r, q, sigma = self.get_parameters_form_stock(self.stock)
         smax, n_s, dt, ds = self.get_parameters(n_s, n_t, s, t, sigma)
         fm, a, b, c = self.get_arrays(n_s, 4)
-        f = self.get_f_array(n_s, ds, k, self.stock.kind)
+        f = self.get_initial_array(n_s, ds, k, self.stock.kind)
 
         # print(n_s)
         # q = 0 # possible addition

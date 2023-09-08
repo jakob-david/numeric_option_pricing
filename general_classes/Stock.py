@@ -8,7 +8,7 @@ class Stock:
         self.S = 42  # spot price
         self.K = 40  # strike price
         self.T = 1  # time
-        self.r = 0.1  # risc free interest rat
+        self.r = 0.1  # risc free interest rate
         self.d = 0  # dividend
         self.v = 0.2  # volatility
         self.kind = 'call'  # type of the Option (call or put)
