@@ -14,6 +14,8 @@ According to Hull (Hull, 2015: p. 304) a process is a Wiener process if two prop
 A generalized Wiener Process has the following form (Hull, 2015)
 
 $$dx=a\ dt+b\ dz$$
+
+In this case $a$ and $b$ are constant. The term $a\ ∆t$ is known to be the drift rate and $b\ \epsilon∆t$ as the variance rate. One can apply this process to a stock to assume the path of a stock price (Hull, 2015): 
 ## Numerical Methods
 
 ### Monte Carlo Simulation
