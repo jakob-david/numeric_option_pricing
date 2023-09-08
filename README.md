@@ -9,7 +9,7 @@ According to Hull a process is a Wiener process if two properties hold true:
 
     “Property 1: The change $∆z$ during a small period of time $∆t$ is
 
-$$\Delta z = \epsilon \sqrt{\Delta t}$$
+    $$\Delta z = \epsilon \sqrt{\Delta t}$$
 
     where $\epsilon$ has a standard normal distribution $\phi(0,1)$.
 
