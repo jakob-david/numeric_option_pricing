@@ -157,6 +157,15 @@ class Simulation:
         self.plot_fd(ns_min, ns_max, nt_min, nt_max, bc, difference, CrankNicolson(self.stock).calculate)
 
     def plot_monte_carlo(self, nt_min, nt_max, difference=True):
+        """
+        Plots the solutions of the Monte-Carlo method for different numbers of runs.
+
+        :param nt_min: minimum time steps
+        :param nt_max: maximum time steps
+        :param difference: false...prices are visible; true...differences to analytic solution are visible
+
+        :return: plot
+        """
 
         if nt_min < 1:
             print("Error: minimum is one run")
@@ -165,6 +174,15 @@ class Simulation:
         self.plot(nt_min, nt_max, difference, MonteCarlo(self.stock).calculate)
 
     def plot_binomial_tree(self, nt_min, nt_max, difference=True):
+        """
+        Plots the solutions of the binomial tree method for different time steps.
+
+        :param nt_min: minimum time steps
+        :param nt_max: maximum time steps
+        :param difference: false...prices are visible; true...differences to analytic solution are visible
+
+        :return: plot
+        """
 
         if nt_min < 1:
             print("Error: minimum is one timestep")
@@ -173,6 +191,15 @@ class Simulation:
         self.plot(nt_min, nt_max, difference, BinomialTree(self.stock).calculate)
 
     def plot_trinomial_tree(self, nt_min, nt_max, difference=True):
+        """
+        Plots the solutions of the trinomial tree method for different time steps.
+
+        :param nt_min: minimum time steps
+        :param nt_max: maximum time steps
+        :param difference: false...prices are visible; true...differences to analytic solution are visible
+
+        :return: plot
+        """
 
         if nt_min < 1:
             print("Error: minimum is one timestep")
@@ -183,6 +210,16 @@ class Simulation:
     # plot helper functions
     # --------------------------------------
     def plot(self, nt_min, nt_max, difference, function):
+        """
+        Actually handles the plotting for the "other methods".
+
+        :param nt_min: minimum time steps
+        :param nt_max: maximum time steps
+        :param difference: false...prices are visible; true...differences to analytic solution are visible
+        :param function: the function which is plotted. (the numeric method)
+
+        :return: plot
+        """
 
         if difference:
             analytic = Analytic(self.stock).calculate()
@@ -217,7 +254,7 @@ class Simulation:
         :param nt_max: maximum time steps
         :param bc: the type of border conditions (d...Dirichlet, n...von Neumann)
         :param difference: false...prices are visible; true...differences to analytic solution are visible
-        :param function: The function which is plotted. (the numeric method)
+        :param function: the function which is plotted. (the numeric method)
 
         :return: plot
         """
