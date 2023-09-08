@@ -149,3 +149,12 @@ The upper and lower border also have to be set. For doing this there are differe
 $$f\left(0,t\right)=0$$
 
 $$f\left(S_{max},t\right)=S_{max}-Ke^{-(T-t)}$$
+
+and for a put-option to 
+
+$$f\left(0,t\right)=Ke^{-r(T-t)}$$
+
+$$f\left(S_{max},t\right)=0$$
+
+A third option also described by Zhang (2017) are Neumann conditions which are the partial derivative of the option at the boundary and according to him incline to be more accurate. To set the conditions the edges are set in a way that the following formulas hold true, where M is the number of prices used. 
+
