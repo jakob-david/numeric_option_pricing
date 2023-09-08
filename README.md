@@ -58,6 +58,14 @@ $$c_{price}=\ S_{0\ }e^{-qT}N\left(d_1\right)-Ke^{-eT}\ N(d_2)$$
 
 $$p_{price}=\ {Ke^{-eT}\ N\left(d_2\right)-S}_{0\ }e^{-qT}N\left(d_1\right)$$
 
+where $d_{1\ }$ and $d_2 is$ are given by
+
+$$d_1=\ \frac{\ln{\left(\frac{S_0}{K}\right)}+\left(r-q+\frac{{\ \sigma}^2}{2}\right)T}{\sigma\ \sqrt T}$$
+
+$$d_2=\ \frac{\ln{\left(\frac{S_0}{K}\right)}+\left(r-q-\frac{{\ \sigma}^2}{2}\right)T}{\sigma\ \sqrt T}$$
+
+In these equations $S_0$ is the spot price of the stock, $K$ is the strike price of the option, $r$ is the risk-free interest rate, $q$ is the dividend yield of the underlying, $\sigma$ its volatility and $T$ is the time until the maturity of the stock. If the underlying of the option does not pay dividends, the dividend yield is zero. 
+
 ## Numerical Methods
 
 ### Monte Carlo Simulation
