@@ -214,3 +214,8 @@ $${c^\ast}_j=\frac{1}{4}j∆t(jσ2+(r-d))$$
 ## Bibliography
 - Hull, J.C., (2015). Options, Futures, and Other Derivates. 9th ed. New Jersey: Pearson Education, Inc.
 - Itô, K., (1951). On Stochastic Differential Equations. New York: American Mathematical Society.
+- Morton, R. C., (1973). Theory of rational option pricing. The Bell Journal of Economics and Management Science. 4, 141 – 183. 
+- Ødegaard, B. A., (2014). Financial Numerical Recipes in C++. s.l.:s.n.
+- Press, W. H., et al., (1992). Numerical Recipes in C: The Art of Scientific Computing. 2nd ed. Cambridge: Press Syndicate of the University of Cambridge.
+- Thurman, J., (2018) Implementing the Binomial Option Pricing Model (online) jose josephthurman.com (Viewed 1 March 2021) Available from: http://www.josephthurman.com/binomial3.html 
+- [24]	Zhang, Q., (2017) On Pricing Options with Finite Difference Methods (online) quintus-zhang.github.io (Viewed on 6 March 2021) Available form: https://quintus-zhang.github.io/post/on_pricing_options_with_finite_difference_methods/
