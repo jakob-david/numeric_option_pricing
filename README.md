@@ -131,3 +131,15 @@ The way of pricing an option with a Monte Carlo simulation is quite different to
 $$S(T)=S(0)e^{\left(r-q-\frac{\sigma^2}{2}\right)T+\sigma\epsilon\sqrt T}$$
 
 The problem with this equation is 𝜖, since this is not an exact number. 𝜖 can be simulated by generating a random number and plugging it into the inverse of the normal derivation. After doing that one can calculate one possible outcome of the equation. However, this is, as just said, just one possible outcome, so it is needed to repeat the process over and over. The higher the number of repetitions, the more exact the price will be. Theoretically, if the number of repetitions comes close to infinity the result for a European option would be the same as if calculated analytically using the Black-Scholes formulas.
+
+### Finite Difference Methods
+Contrary to the methods described above these are a bit more complex. The used techniques are used in physics as well. Instead of calculating a tree or simulating a normal derivation these processes rely on building a grid as shown in Figure 4. 
+
+<p align="center">
+    <img width="500" src="./zz_pictures_for_readme/picture_4.png" alt="Figure 3"><br>
+    <em>
+    Figure 4: Illustration of a grid that is used for calculating the price of an option using finite difference methods (Hull, 2015)
+    </em>
+</p>
+
+Oppositely to, for instance, the binomial tree not only one stock price is taken into account, but a certain number of prices between $0$ and $S_{max}$. The $S_{max}$ can be chosen freely. However, it seems simplest to define $S_{max}$ as $2S_0$ since then $S_0$ is exactly in the middle of the grid. The time steps $∆t$ are shown on the horizontal axis. At the end of the grid the option price is evaluated by $max(j∆S-K,0)$ for a call-option and $max(K-j∆S,0)$ for a put option (Hull, 2015) (Ødegaard, 2014). Specially attention should be drawn to the fact that in this case no kind of discountation is made.
