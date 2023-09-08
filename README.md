@@ -101,7 +101,7 @@ $$f_{i,j}=max(K - S_{0}u^{j}d^{i-j}, e^{-r\Delta t} ( pf_{i+1,j+1}+(1-p)f_{i+1,j
 
 In these equations $i$ is the time interval and $j$ identifies the different nodes per time interval. As an example, $S_0u^3$ from Figure 2 would be $f_{3,3}$. When evaluating a European option, the max function is not needed, and it is easy to see that 
 
-$$f_{i,\ j}=e-r∆t pfi+1,j+1+(1-p)fi+1,j$$
+$$f_{i,j}=e^{-r\Delta t}pf_{i+1,j+1}+(1-p)f_{i+1,j}$$
 
 ### Monte Carlo Simulation
 The way of pricing an option with a Monte Carlo simulation is quite different to the other ways of option pricing. In contrast to the other methods discussed in this paper, it is not needed to calculate nodes or build a tree in some kind. The procedure is quite simple and can easily be implemented in Microsoft Excel as shown by Hull (2015). First, one calculates the value of the stock after some time 𝑡. For doing this the following formula is needed (Hull, 2015).
