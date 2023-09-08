@@ -12,11 +12,12 @@ According to Hull a process is a Wiener process if two properties hold true:
 $$\Delta z = \epsilon \sqrt{\Delta t}$$
 
 where $\epsilon$ has a standard normal distribution $\phi(0,1)$.
-Property 2: 	The values of ∆z for any two different short intervals of time are independent. “(Hull, 2015: p. 304)
+
+Property 2: 	The values of $∆z$ for any two different short intervals of time are independent. “(Hull, 2015: p. 304)
 
 A generalized Wiener Process has the following form (Hull, 2015)
 
-
+$$dx=a\ dt+b\ dz$$
 ## Numerical Methods
 
 ### Monte Carlo Simulation
