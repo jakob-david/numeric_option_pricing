@@ -79,7 +79,7 @@ The binomial tree approach is illustrated in Figure 2. The root of the tree is t
     </em>
 </p>
 
-Since the values for $S_0$ are the same in the last layer the value of the option for that layer can be calculated with $\max\funcapply(S_ou^jd^{N-1}-K,\ 0)$ for a call option and $\max\funcapply(K-S_ou^jd^{N-1},\ 0)$ for a put option. This can be derived from the equations. The next step is not that easy. Now it is needed to go back step by step to the beginning of the binomial tree. To give an example, to obtain the value of $S_0u^3$ from Figure 2, $S_0u^4$ and $S_0u^2$ are needed. In the end the value of the root node is obtained which is an approximation for the real value of the option. The exact formulas can also be derived. (Hull, 2015)
+Since the values for $S_0$ are the same in the last layer the value of the option for that layer can be calculated with $\max(S_ou^jd^{N-1}-K,\ 0)$ for a call option and $\max(K-S_ou^jd^{N-1},\ 0)$ for a put option. This can be derived from the equations. The next step is not that easy. Now it is needed to go back step by step to the beginning of the binomial tree. To give an example, to obtain the value of $S_0u^3$ from Figure 2, $S_0u^4$ and $S_0u^2$ are needed. In the end the value of the root node is obtained which is an approximation for the real value of the option. The exact formulas can also be derived. (Hull, 2015)
 
 $$p=\frac{a-d}{u-d}$$
 
@@ -93,11 +93,11 @@ $$a=e(r-q)∆t$$
 
 Hull (2015) specifies the formulas for working a binomial tree for American Options backwards. Because an American option can be exercised at any time a max function is needed at every node. For a call option this gives
 
-$$f_{i,\ j}=\max\funcapply{S_0u^jd^{i-j}-K,\ e-r∆t[pfi+1,j+1+(1-p)fi+1,j]}$$
+$$f_{i,\ j}=\max{S_0u^jd^{i-j}-K,\ e-r∆t[pfi+1,j+1+(1-p)fi+1,j]}$$
 
 and for a put option 
 
-$$f_{i,\ j}=\max\funcapply{{K-\ S}_0u^jd^{i-j},\ e-r∆t[pfi+1,j+1+(1-p)fi+1,j]}$$
+$$f_{i,\ j}=\max{{K-\ S}_0u^jd^{i-j},\ e-r∆t[pfi+1,j+1+(1-p)fi+1,j]}$$
 
 In these equations $i$ is the time interval and $j$ identifies the different nodes per time interval. As an example, $S_0u^3$ from Figure 2 would be $f_{3,3}$. When evaluating a European option, the max function is not needed, and it is easy to see that 
 
