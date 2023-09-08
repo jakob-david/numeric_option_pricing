@@ -32,7 +32,7 @@ class TrinomialTree:
         sigma_sqr = sigma * sigma
 
         u = math.exp(sigma * math.sqrt(3 * dt))
-        d = 1 / u
+        # d = 1 / u
         p_u = 1 / 6 + math.sqrt(dt / (12 * sigma_sqr)) * (r - q - 0.5 * sigma_sqr)
         p_m = 2 / 3
         p_d = 1 / 6 - math.sqrt(dt / (12 * sigma_sqr)) * (r - q - 0.5 * sigma_sqr)

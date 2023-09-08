@@ -25,7 +25,6 @@ class BinomialTree:
         k = self.stock.k
         t = self.stock.t
         r = self.stock.r
-        d = self.stock.d
         vol = self.stock.v
 
         dt = t / n

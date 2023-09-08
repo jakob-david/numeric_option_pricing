@@ -1,5 +1,4 @@
 import math
-import numpy as np
 
 from finite_difference_methods.FiniteDifference import FiniteDifference
 
@@ -32,7 +31,7 @@ class CrankNicolson(FiniteDifference):
         f = self.get_initial_array(n_s, ds, k, self.stock.kind)
 
         sigma_sq = sigma * sigma
-        q = 0  # possible improvement
+        # q = 0  # possible improvement
 
         for j in range(0, n_s + 1):
             a[j] = -.25 * j * dt * (j * sigma_sq - r)

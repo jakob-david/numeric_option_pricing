@@ -27,7 +27,6 @@ class MonteCarlo:
         k = self.stock.k
         t = self.stock.t
         r = self.stock.r
-        d = self.stock.d
         vol = self.stock.v
 
         sum_price = 0
@@ -50,4 +49,3 @@ class MonteCarlo:
             return False
 
         return sum_price / n
-
