@@ -93,6 +93,8 @@ $$a=e^{(r-q)∆t}$$
 
 Hull (2015) specifies the formulas for working a binomial tree for American Options backwards. Because an American option can be exercised at any time a max function is needed at every node. For a call option this gives
 
+$$f_{i,j}=max\left\{ S_{0}u^{j}d^{i-j}-K, e^{-r\Delta t} ( pf_{i+1,j+1}+(1-p)f_{i+1,j})) \right\}$$
+
 and for a put option 
 
 $$f_{i,\ j}=\max{{K-\ S}_0u^jd^{i-j},\ e-r∆t(pfi+1,j+1+(1-p)fi+1,j)}$$
