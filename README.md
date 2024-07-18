@@ -213,11 +213,16 @@ $${c^\ast}_j=\frac{1}{4}j∆t(jσ2+(r-d))$$
 
 ## Results 
 
-The simulator in this project can calculate stock prices for arbitrary options. However, for this section, the following parameters are chosen. 
+The simulator in this project can calculate option prices for arbitrary European options. However, the following parameters are chosen for this section. 
 
-| S0 | K  | T | r   | d | sigma | kind |
+<p align="center">
+    <em>
+    Table 1: The parameters for the option used for the results. 
+    </em>
+| $S_0$ | $K$  | $T$ | $r$   | $d$ | $v$ | $kind$ |
 |----|----|---|-----|---|-------|------|
 | 42 | 40 | 1 | 0.1 | 0 | 0.2   | call |
+</p>
 
 This section demonstrates the simulator's capabilities. The first example illustrates a possible trajectory of a stock price generated through a Wiener Process.
 
