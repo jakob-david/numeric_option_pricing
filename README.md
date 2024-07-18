@@ -213,6 +213,22 @@ $${c^\ast}_j=\frac{1}{4}j∆t(jσ2+(r-d))$$
 
 ## Results 
 
+The simulator in this project can calculate stock prices for arbitrary options. However, for this section, the following parameters are chosen. 
+
+| S0 | K  | T | r   | d | sigma | kind |
+|----|----|---|-----|---|-------|------|
+| 42 | 40 | 1 | 0.1 | 0 | 0.2   | call |
+
+This section demonstrates the simulator's capabilities. The first example illustrates a possible trajectory of a stock price generated through a Wiener Process.
+
+<p align="center">
+    <img width="400" src="./zz_pictures_for_readme/picture_6.png" alt="Figure 3"><br>
+    <em>
+    Figure 6: A possible random path for the stock price. 
+    </em>
+</p>
+
+
 ## Bibliography
 - Hull, J.C., (2015). Options, Futures, and Other Derivates. 9th ed. New Jersey: Pearson Education, Inc.
 - Itô, K., (1951). On Stochastic Differential Equations. New York: American Mathematical Society.
