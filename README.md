@@ -211,6 +211,8 @@ $${b^\ast}_j=1-\frac{1}{2}∆t(j2σ2+(r-d))$$
 
 $${c^\ast}_j=\frac{1}{4}j∆t(jσ2+(r-d))$$
 
+## Results 
+
 ## Bibliography
 - Hull, J.C., (2015). Options, Futures, and Other Derivates. 9th ed. New Jersey: Pearson Education, Inc.
 - Itô, K., (1951). On Stochastic Differential Equations. New York: American Mathematical Society.
