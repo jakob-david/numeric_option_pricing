@@ -213,7 +213,7 @@ $${c^\ast}_j=\frac{1}{4}j∆t(jσ2+(r-d))$$
 
 ## Results 
 
-The simulator in this project can calculate option prices for arbitrary European options. However, the following parameters are chosen for this section. 
+The simulator in this project can calculate option prices for arbitrary European options. However, since some parameters must be chosen for this section, Table 1 presents the example option selected for this section. Please note that $S_0$ represents the *spot price*, $K$ the *strike price*, $t$ the *time*, $r$ the *risk-free interest rate*, $d$ the *dividend*, and $v$ the *volatility*. The *kind* parameter specifies whether the option is a *call* or a *put*.
 
 <div align="center">
     <em>Table 1: The parameters for the option used for the results.</em>
@@ -239,7 +239,7 @@ The simulator in this project can calculate option prices for arbitrary European
     </table>
 </div>
 
-This section demonstrates the simulator's capabilities. The first example illustrates a possible trajectory of a stock price generated through a Wiener Process.
+After having defined an example option and, thereby, an underlying stock, it is now possible to simulate one possible value path for this stock as shown in Figure 6. 
 
 <p align="center">
     <img width="400" src="./zz_pictures_for_readme/picture_6.png" alt="Figure 3"><br>
