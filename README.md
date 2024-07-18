@@ -217,7 +217,6 @@ The simulator in this project can calculate option prices for arbitrary European
 
 <div align="center">
     <em>Table 1: The parameters for the option used for the results.</em>
-    
     <table>
         <tr>
             <th>$S_0$</th>
