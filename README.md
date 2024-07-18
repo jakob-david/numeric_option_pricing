@@ -217,12 +217,27 @@ The simulator in this project can calculate option prices for arbitrary European
 
 <div align="center">
     <em>Table 1: The parameters for the option used for the results.</em>
-
-```markdown
-| $S_0$ | $K$ | $T$ | $r$ | $d$ | $v$ | $kind$ |
-|-------|-----|-----|-----|-----|-----|--------|
-| 42    | 40  | 1   | 0.1 | 0   | 0.2 | call   |
-```
+    
+    <table>
+        <tr>
+            <th>$S_0$</th>
+            <th>$K$</th>
+            <th>$T$</th>
+            <th>$r$</th>
+            <th>$d$</th>
+            <th>$v$</th>
+            <th>$kind$</th>
+        </tr>
+        <tr>
+            <td>42</td>
+            <td>40</td>
+            <td>1</td>
+            <td>0.1</td>
+            <td>0</td>
+            <td>0.2</td>
+            <td>call</td>
+        </tr>
+    </table>
 </div>
 
 This section demonstrates the simulator's capabilities. The first example illustrates a possible trajectory of a stock price generated through a Wiener Process.
