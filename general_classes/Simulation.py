@@ -124,7 +124,7 @@ class Simulation:
 
         self.plot_fd(ns_min, ns_max, nt_min, nt_max, bc, difference, ExplicitFD(self.stock).calculate)
 
-    def plot_implicit_df(self, ns_min, ns_max, nt_min, nt_max, bc, difference=True):
+    def plot_implicit_fd(self, ns_min, ns_max, nt_min, nt_max, bc, difference=True):
         """
         Plots the solutions of the implicit finite difference method for different spot prices and different time steps.
 
@@ -241,6 +241,8 @@ class Simulation:
         else:
             plt.ylabel("price")
 
+        plt.rcParams['figure.dpi'] = 300
+        plt.tight_layout()
         plt.show()
         plt.close()
 
@@ -294,9 +296,13 @@ class Simulation:
         plt.ylabel("number of spot prices")
 
         if difference:
-            ax.set_zlabel("difference")
+            ax.set_zlabel("difference", labelpad=15)
         else:
-            ax.set_zlabel("price")
+            ax.set_zlabel("price", labelpad=15)
 
+        ax.tick_params(axis='z', pad=7)
+
+        plt.rcParams['figure.dpi'] = 300
+        plt.tight_layout()
         plt.show()
         plt.close()
