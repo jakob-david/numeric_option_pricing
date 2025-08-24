@@ -1,6 +1,6 @@
 # Numeric Option Pricing
 
-This project represents my Bachelor’s thesis in Business Informatics at the [FH Technikum Wien](https://www.technikum-wien.at/en/). 
+This project represents the main methods I used for my Bachelor’s thesis in Business Informatics at the [FH Technikum Wien](https://www.technikum-wien.at/en/). 
 
 ## Theory 
 
@@ -273,6 +273,17 @@ Figure 8 shows the results of the explicit and implicit finite difference method
     <img src="./zz_pictures_for_readme/picture_10_implicit_fd.png" alt="Implicit Finite Difference Method" width="45%"/><br>
     <em>Figure 8: The absolute difference between the analytical solution of the the explicit finite difference method (left) and the implicit finite difference method (right).</em>
 </div>
+
+### Crank-Nicolson Method
+
+At first glance, the Crank-Nicolson method might appear to converge less steadily, but when examining the scale of the error, it becomes clear that this is not the case. In fact, the method produces very good results even with a relatively small number of time steps.
+
+<p align="center">
+    <img width="500" src="./zz_pictures_for_readme/picture_11.png" alt="Crank-Nicolson Method"><br>
+    <em>
+    Figure 9: The absolute difference between the analytical solution of the the Crank-Nicolson method.
+    </em>
+</p>
 
 ## Bibliography
 - Hull, J.C., (2015). Options, Futures, and Other Derivates. 9th ed. New Jersey: Pearson Education, Inc.
