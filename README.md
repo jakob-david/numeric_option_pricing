@@ -242,7 +242,7 @@ The simulator in this project can calculate option prices for arbitrary European
 After defining an example option and its underlying stock, it is now possible to simulate a possible value path for this stock, similar to what was done in Figure 1. One such path for the presented stock is shown in Figure 6.
 
 <p align="center">
-    <img width="500" src="./zz_pictures_for_readme/picture_06.png" alt="Figure 3"><br>
+    <img width="500" src="./zz_pictures_for_readme/picture_06.png" alt="Figure 6"><br>
     <em>
     Figure 6: A randomly generated walk representing the changes in the stock price of the stock presented in Table 1.
     </em>
@@ -255,14 +255,14 @@ Since there exists an analytical solution to the Black-Scholes-Merton model for 
 ### Tree Methods
 
 <p align="center">
-    <img width="500" src="./zz_pictures_for_readme/picture_07.png" alt="Figure 3"><br>
+    <img width="500" src="./zz_pictures_for_readme/picture_07_binomial_tree.png" alt="Figure 7"><br>
     <em>
     Figure 7: The absolute difference between the analytical solution and the binomial tree method.
     </em>
 </p>
 
 <p align="center">
-    <img width="500" src="./zz_pictures_for_readme/picture_08.png" alt="Figure 3"><br>
+    <img width="500" src="./zz_pictures_for_readme/picture_08_trinomial_tree.png" alt="Figure 8"><br>
     <em>
     Figure 8: The absolute difference between the analytical solution and the trinomial tree method.
     </em>
