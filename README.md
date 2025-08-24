@@ -254,12 +254,10 @@ d_{2} = \frac{\ln \left(\tfrac{S}{K}\right) + \left(r - d - \tfrac{1}{2}\sigma^2
 = d_{1} - \sigma \sqrt{T}
 $$
 
-**Call Option:**
 $$
 C = S e^{-dT}\, N(d_{1}) - K e^{-rT}\, N(d_{2})
 $$
 
-**Put Option:**
 $$
 P = K e^{-rT}\, N(-d_{2}) - S e^{-dT}\, N(-d_{1})
 $$
