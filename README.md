@@ -243,7 +243,7 @@ After having defined an example option and, thereby, an underlying stock, it is 
 
 ### Analytical Result
 
-Since there exists an analytical solution of the Black-Scholes-Merton Model for european options the price of the presented option in Table 1 can be calculated and is about $6.837$.
+Since there exists an analytical solution to the Black-Scholes-Merton model for European options, the price of the option presented in Table 1 can be calculated as approximately $6.837$. With the true value known, all subsequent numerical methods can be evaluated based on how accurately they approximate this solution. One might ask why numerical methods are needed if an analytical solution exists. The answer is that, while an analytical solution exists for European options, no such closed-form solution is available for other types of options, such as American options.
 
 
 ## Bibliography
