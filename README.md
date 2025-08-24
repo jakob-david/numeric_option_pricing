@@ -252,6 +252,22 @@ After defining an example option and its underlying stock, it is now possible to
 
 Since there exists an analytical solution to the Black-Scholes-Merton model for European options, the price of the option presented in Table 1 can be calculated as approximately $6.837$. With the true value known, all subsequent numerical methods can be evaluated based on how accurately they approximate this solution. One might ask why numerical methods are needed if an analytical solution exists. The answer is that, while an analytical solution exists for European options, no such closed-form solution is available for other types of options, such as American options.
 
+### Tree Methods
+
+<p align="center">
+    <img width="500" src="./zz_pictures_for_readme/picture_07.png" alt="Figure 3"><br>
+    <em>
+    Figure 7: The absolute difference between the analytical solution and the binomial tree method.
+    </em>
+</p>
+
+<p align="center">
+    <img width="500" src="./zz_pictures_for_readme/picture_08.png" alt="Figure 3"><br>
+    <em>
+    Figure 8: The absolute difference between the analytical solution and the trinomial tree method.
+    </em>
+</p>
+
 
 ## Bibliography
 - Hull, J.C., (2015). Options, Futures, and Other Derivates. 9th ed. New Jersey: Pearson Education, Inc.
