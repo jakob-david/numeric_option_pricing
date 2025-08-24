@@ -261,6 +261,8 @@ $$
 value_{put} = K e^{-rT} N(-d_{2}) - S e^{-dT} N(-d_{1})
 $$
 
+Following this analytical solution 
+
 
 ## Bibliography
 - Hull, J.C., (2015). Options, Futures, and Other Derivates. 9th ed. New Jersey: Pearson Education, Inc.
