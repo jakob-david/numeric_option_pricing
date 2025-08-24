@@ -254,7 +254,7 @@ d_{2} = \frac{\ln \left(\tfrac{S}{K}\right) + \left(r - d - \tfrac{1}{2}\sigma^2
 $$
 
 $$
-C = S * e^{-dT}\, N(d_{1}) - K e^{-rT}\, N(d_{2})
+C = S \dot e^{-dT}\, N(d_{1}) - K e^{-rT}\, N(d_{2})
 $$
 
 $$
