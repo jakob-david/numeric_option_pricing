@@ -243,25 +243,7 @@ After having defined an example option and, thereby, an underlying stock, it is 
 
 ### Analytical Result
 
-Since there exists an analytical solution for european options a price for such options can be calculated directly using the following formula where $N$ referes to the normal distribution: 
-
-$$
-d_{1} = \frac{\ln \left(\tfrac{S}{K}\right) + \left(r - d + \tfrac{1}{2}\sigma^2\right)T}{\sigma \sqrt{T}}
-$$
-
-$$
-d_{2} = \frac{\ln \left(\tfrac{S}{K}\right) + \left(r - d - \tfrac{1}{2}\sigma^2\right)T}{\sigma \sqrt{T}}
-$$
-
-$$
-value_{call} = S e^{-dT} N(d_{1}) - K e^{-rT} N(d_{2})
-$$
-
-$$
-value_{put} = K e^{-rT} N(-d_{2}) - S e^{-dT} N(-d_{1})
-$$
-
-Following this analytical solution 
+Since there exists an analytical solution of the Black-Scholes-Merton Model for european options the price of the presented option in Table 1 can be calculated and is about $6.837$.
 
 
 ## Bibliography
