@@ -71,6 +71,10 @@ In these equations, $S_0$ is the spot price of the stock, $K$ is the strike pric
 ## Numerical Methods
 It is very easy to calculate the current price of a European option since it is possible to find a suitable analytical solution for the equation. As mentioned earlier, this is not always the case. For instance, an American option can be exercised at any time, and thus, as of today, an analytical solution for the Black-Scholes-Morten differential equation is known. For problems like this, numerical methods are necessary. These were described already shortly above. To use this method’s formula the discrete version is needed. All the methods described in this section were coded in the course of this paper and can be found in Appendix A. Among others, Press (1992), Ødegaard (2014), and (Hull, 2015) were used for the coding. 
 
+### Monte Carlo
+
+The Monte Carlo method is perhaps the simplest of all the methods mentioned here. It works by generating numerous random paths that the price can take and then averaging them. Unfortunately, despite its simplicity, the computational cost can be high when attempting to reduce statistical problems like a high variance.
+
 ### Binomial Tree
 The binomial tree approach is illustrated in Figure 2. The root of the tree is the spot price. Now, there are two possibilities. Either the stock moves up with a certain probability or moves down with a certain probability. From the obtained nodes, the stock can again either go up or down. This goes on as long as it is wanted. Since it makes no difference whether the stock moves first up and then down or vice versa, the two nodes merge. For coding, the Algorithm Thurman (2018) was used. 
 
@@ -254,13 +258,24 @@ After defining an example option and its underlying stock, it is now possible to
 
 Since there exists an analytical solution to the Black-Scholes-Merton model for European options, the price of the option presented in Table 1 can be calculated as approximately $6.837$. With the true value known, all subsequent numerical methods can be evaluated based on how accurately they approximate this solution. One might ask why numerical methods are needed if an analytical solution exists. The answer is that, while an analytical solution exists for European options, no such closed-form solution is available for other types of options, such as American options.
 
+### Monte Carlo Method
+
+The Monte Carlo method is capable of providing an approximation; however, it is immediately apparent that the variance is very high. Nevertheless, with a sufficient number of random paths, the method can produce an accurate result. One must, nonetheless, mention that a major advantage of this method is its simplicity of implementation.
+
+<p align="center">
+    <img width="500" src="./zz_pictures_for_readme/picture_07_monte_carlo.png" alt="Monte Carlo Method"><br>
+    <em>
+    Figure 9: The absolute difference between the analytical solution of the the Monte Carlo method.
+    </em>
+</p>
+
 ### Tree Methods
 
 As shown in Figure 7, both the binomial and trinomial tree methods produce good approximations, although the trinomial method appears to fit the analytical solution better and also seems slightly more stable in converging toward the result.
 
 <div style="display: flex; justify-content: space-between;" align="center"> 
-    <img src="./zz_pictures_for_readme/picture_07_binomial_tree.png" alt="Binomial Tree" width="45%"/>
-    <img src="./zz_pictures_for_readme/picture_08_trinomial_tree.png" alt="Trinomial Tree" width="45%"/><br>
+    <img src="./zz_pictures_for_readme/picture_08_binomial_tree.png" alt="Binomial Tree" width="45%"/>
+    <img src="./zz_pictures_for_readme/picture_09_trinomial_tree.png" alt="Trinomial Tree" width="45%"/><br>
     <em>Figure 7: The absolute difference between the analytical solution of the the binomial tree method (left) and the trinomial tree method (right).</em>
 </div>
 
@@ -269,8 +284,8 @@ As shown in Figure 7, both the binomial and trinomial tree methods produce good 
 Figure 8 shows the results of the explicit and implicit finite difference methods. Unlike the tree methods, finite difference methods require evaluating multiple spot prices to approximate the derivatives of the stock price. While this can be more computationally costly, it also allows the methods to be applied across multiple spot prices simultaneously. As can be seen, the explicit method fails to converge and may even diverge if the time step is too large, as is well known. In contrast, the implicit method exhibits good convergence toward the correct solution.
 
 <div style="display: flex; justify-content: space-between;" align="center"> 
-    <img src="./zz_pictures_for_readme/picture_09_explicit_fd.png" alt="Explicit Finite Difference Method" width="45%"/>
-    <img src="./zz_pictures_for_readme/picture_10_implicit_fd.png" alt="Implicit Finite Difference Method" width="45%"/><br>
+    <img src="./zz_pictures_for_readme/picture_10_explicit_fd.png" alt="Explicit Finite Difference Method" width="45%"/>
+    <img src="./zz_pictures_for_readme/picture_11_implicit_fd.png" alt="Implicit Finite Difference Method" width="45%"/><br>
     <em>Figure 8: The absolute difference between the analytical solution of the the explicit finite difference method (left) and the implicit finite difference method (right).</em>
 </div>
 
@@ -279,7 +294,7 @@ Figure 8 shows the results of the explicit and implicit finite difference method
 At first glance, the Crank-Nicolson method might appear to converge less steadily, but when examining the scale of the error, it becomes clear that this is not the case. In fact, the method produces very good results even with a relatively small number of time steps.
 
 <p align="center">
-    <img width="500" src="./zz_pictures_for_readme/picture_11_crank_nicolson.png" alt="Crank-Nicolson Method"><br>
+    <img width="500" src="./zz_pictures_for_readme/picture_12_crank_nicolson.png" alt="Crank-Nicolson Method"><br>
     <em>
     Figure 9: The absolute difference between the analytical solution of the the Crank-Nicolson method.
     </em>
