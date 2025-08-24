@@ -254,25 +254,12 @@ Since there exists an analytical solution to the Black-Scholes-Merton model for 
 
 ### Tree Methods
 
-<p align="center">
-    <img width="500" src="./zz_pictures_for_readme/picture_07_binomial_tree.png" alt="Figure 7"><br>
-    <em>
-    Figure 7: The absolute difference between the analytical solution and the binomial tree method.
-    </em>
-</p>
-
-<p align="center">
-    <img width="500" src="./zz_pictures_for_readme/picture_08_trinomial_tree.png" alt="Figure 8"><br>
-    <em>
-    Figure 8: The absolute difference between the analytical solution and the trinomial tree method.
-    </em>
-</p>
-
+As shown in Figure 7, both the binomial and trinomial tree methods produce good approximations, although the trinomial method appears to be slightly more stable in converging toward the result.
 
 <div style="display: flex; justify-content: space-between;" align="center"> 
-    <img src="./zz_pictures_for_readme/picture_07_binomial_tree.png" alt="Figure 7" width="45%"/>
-    <img src="./zz_pictures_for_readme/picture_08_trinomial_tree.png" alt="Figure 8" width="45%"/><br>
-    <em>Figure 5: The absolute difference between the analytical solution and the binomial tree method (left) and the trinomial tree method (right).</em>
+    <img src="./zz_pictures_for_readme/picture_07_binomial_tree.png" alt="Binomial Tree" width="45%"/>
+    <img src="./zz_pictures_for_readme/picture_08_trinomial_tree.png" alt="Trinomial Tree" width="45%"/><br>
+    <em>Figure 7: The absolute difference between the analytical solution and the binomial tree method (left) and the trinomial tree method (right).</em>
 </div>
 
 
