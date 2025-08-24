@@ -244,7 +244,7 @@ After having defined an example option and, thereby, an underlying stock, it is 
 <p align="center">
     <img width="500" src="./zz_pictures_for_readme/picture_06.png" alt="Figure 3"><br>
     <em>
-    Figure 1: A generated random walk of the change of a stock price of the stock presented in Table 1.
+    Figure 6: A randomly generated walk representing the changes in the stock price of the stock presented in Table 1.
     </em>
 </p>
 
