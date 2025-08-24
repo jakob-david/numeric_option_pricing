@@ -241,6 +241,28 @@ The simulator in this project can calculate option prices for arbitrary European
 
 After having defined an example option and, thereby, an underlying stock, it is now possible to simulate one possible value path for this stock, as shown in Figure 1. 
 
+### Analytical Result
+
+Since there exists an analytical solution for european options a price for such options can be calculated directly using the following formula: 
+
+$$
+d_{1} = \frac{\ln \left(\tfrac{S}{K}\right) + \left(r - d + \tfrac{1}{2}\sigma^2\right)T}{\sigma \sqrt{T}}
+$$
+
+$$
+d_{2} = \frac{\ln \left(\tfrac{S}{K}\right) + \left(r - d - \tfrac{1}{2}\sigma^2\right)T}{\sigma \sqrt{T}}
+= d_{1} - \sigma \sqrt{T}
+$$
+
+**Call Option:**
+$$
+C = S e^{-dT}\, N(d_{1}) - K e^{-rT}\, N(d_{2})
+$$
+
+**Put Option:**
+$$
+P = K e^{-rT}\, N(-d_{2}) - S e^{-dT}\, N(-d_{1})
+$$
 
 
 ## Bibliography
