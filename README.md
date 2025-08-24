@@ -258,7 +258,7 @@ C = S \bullet e^{-dT} \bullet N(d_{1}) - K \bullet  e^{-rT} \bullet  N(d_{2})
 $$
 
 $$
-P = K e^{-rT}\, N(-d_{2}) - S e^{-dT}\, N(-d_{1})
+P = K \bullet  e^{-rT} \, N(-d_{2}) - S e^{-dT}\, N(-d_{1})
 $$
 
 
