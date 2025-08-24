@@ -1,6 +1,6 @@
 # Numeric Option Pricing
 
-This project represents the main methods I used for my Bachelor’s thesis in Business Informatics at the [FH Technikum Wien](https://www.technikum-wien.at/en/). 
+This project represents the main methods I used for my Bachelor’s thesis in Business Informatics at the [FH Technikum Vienna](https://www.technikum-wien.at/en/). 
 
 ## Theory 
 
