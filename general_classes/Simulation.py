@@ -296,7 +296,7 @@ class Simulation:
         ax.plot_wireframe(x, y, z, rstride=1, cstride=1)
 
         plt.xlabel("number of time steps")
-        plt.ylabel("number of spot prices")
+        plt.ylabel("spot prices")
 
         if difference:
             ax.set_zlabel("difference", labelpad=15)
