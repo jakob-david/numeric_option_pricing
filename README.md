@@ -1,6 +1,6 @@
 # Numeric Option Pricing
 
-This project represents my Bachelor Thesis in Business Informatics at the [FH Technikum Wien](https://www.technikum-wien.at/en/). 
+This project represents my Bachelor’s thesis in Business Informatics at the [FH Technikum Wien](https://www.technikum-wien.at/en/). 
 
 ## Theory 
 
