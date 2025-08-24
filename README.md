@@ -239,7 +239,14 @@ The simulator in this project can calculate option prices for arbitrary European
     </table>
 </div>
 
-After having defined an example option and, thereby, an underlying stock, it is now possible to simulate one possible value path for this stock, as shown in Figure 1. 
+After having defined an example option and, thereby, an underlying stock, it is now possible to again simulate one possible value path for this stock as was done in Figure 1. One possible path for the presented stock is shown in Figure 6. 
+
+<p align="center">
+    <img width="500" src="./zz_pictures_for_readme/picture_06.png" alt="Figure 3"><br>
+    <em>
+    Figure 1: A generated random walk of the change of a stock price of the stock presented in Table 1.
+    </em>
+</p>
 
 ### Analytical Result
 
