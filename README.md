@@ -259,9 +259,18 @@ As shown in Figure 7, both the binomial and trinomial tree methods produce good 
 <div style="display: flex; justify-content: space-between;" align="center"> 
     <img src="./zz_pictures_for_readme/picture_07_binomial_tree.png" alt="Binomial Tree" width="45%"/>
     <img src="./zz_pictures_for_readme/picture_08_trinomial_tree.png" alt="Trinomial Tree" width="45%"/><br>
-    <em>Figure 7: The absolute difference between the analytical solution and the binomial tree method (left) and the trinomial tree method (right).</em>
+    <em>Figure 7: The absolute difference between the analytical solution of the the binomial tree method (left) and the trinomial tree method (right).</em>
 </div>
 
+### Explicit and Implicit Finite Difference Method
+
+Figure 8 shows the results of the explicit and implicit finite difference methods. As can be seen immediately, the explicit method not only fails to converge but actually diverges when the time step is not sufficiently small, as is well known. In contrast, the implicit method demonstrates good convergence toward the correct solution.
+
+<div style="display: flex; justify-content: space-between;" align="center"> 
+    <img src="./zz_pictures_for_readme/picture_09_explicit_fd.png" alt="Explicit Finite Difference Method" width="45%"/>
+    <img src="./zz_pictures_for_readme/picture_10_implicit_fd.png" alt="Implicit Finite Difference Method" width="45%"/><br>
+    <em>Figure 8: The absolute difference between the analytical solution of the the explicit finite difference method (left) and the implicit finite difference method (right).</em>
+</div>
 
 ## Bibliography
 - Hull, J.C., (2015). Options, Futures, and Other Derivates. 9th ed. New Jersey: Pearson Education, Inc.
