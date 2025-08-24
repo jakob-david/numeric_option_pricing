@@ -264,7 +264,7 @@ As shown in Figure 7, both the binomial and trinomial tree methods produce good 
 
 ### Explicit and Implicit Finite Difference Method
 
-Figure 8 shows the results of the explicit and implicit finite difference methods. In contrast to the tree methods the finite dirrefence methods need to evaluate multiple spot prices in order to work. This is because in order to make an approximation of the derivative of the stock price one needs multiple spot prices. This is potentually more computational costly but also provides the ability to evaluate the methds on more than one spot price. As can be seen immediately, the explicit method not only fails to converge but actually diverges when the time step is not sufficiently small, as is well known. In contrast, the implicit method demonstrates good convergence toward the correct solution.
+Figure 8 shows the results of the explicit and implicit finite difference methods. Unlike the tree methods, finite difference methods require evaluating multiple spot prices to approximate the derivatives of the stock price. While this can be more computationally costly, it also allows the methods to be applied across multiple spot prices simultaneously. As can be seen, the explicit method fails to converge and may even diverge if the time step is too large, as is well known. In contrast, the implicit method exhibits good convergence toward the correct solution.
 
 <div style="display: flex; justify-content: space-between;" align="center"> 
     <img src="./zz_pictures_for_readme/picture_09_explicit_fd.png" alt="Explicit Finite Difference Method" width="45%"/>
