@@ -254,7 +254,7 @@ Since there exists an analytical solution to the Black-Scholes-Merton model for 
 
 ### Tree Methods
 
-As shown in Figure 7, both the binomial and trinomial tree methods produce good approximations, although the trinomial method appears to be slightly more stable in converging toward the result.
+As shown in Figure 7, both the binomial and trinomial tree methods produce good approximations, although the trinomial method appears to fit the analytical solution better and also seems slightly more stable in converging toward the result.
 
 <div style="display: flex; justify-content: space-between;" align="center"> 
     <img src="./zz_pictures_for_readme/picture_07_binomial_tree.png" alt="Binomial Tree" width="45%"/>
