@@ -269,6 +269,13 @@ Since there exists an analytical solution to the Black-Scholes-Merton model for 
 </p>
 
 
+<div style="display: flex; justify-content: space-between;" align="center"> 
+    <img src="./zz_pictures_for_readme/picture_07_binomial_tree.png" alt="Figure 7" width="45%"/>
+    <img src="./zz_pictures_for_readme/picture_08_trinomial_tree.png" alt="Figure 8" width="45%"/><br>
+    <em>Figure 5: The absolute difference between the analytical solution and the binomial tree method (left) and the trinomial tree method (right).</em>
+</div>
+
+
 ## Bibliography
 - Hull, J.C., (2015). Options, Futures, and Other Derivates. 9th ed. New Jersey: Pearson Education, Inc.
 - Itô, K., (1951). On Stochastic Differential Equations. New York: American Mathematical Society.
