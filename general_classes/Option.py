@@ -113,10 +113,13 @@ class Option:
         for i in range(0, len(idx)):
             idx[i] = i
 
+
+        plt.rcParams['figure.dpi'] = 150
         plt.plot(idx, f)
 
         plt.xlabel("time steps")
         plt.ylabel("stock price")
+
 
         plt.show()
         plt.close()

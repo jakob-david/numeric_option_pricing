@@ -233,6 +233,8 @@ class Simulation:
             y[i-1] = function(i) - analytic
             x[i-1] = i
 
+        plt.rcParams['figure.dpi'] = 150
+
         plt.plot(x, y)
 
         plt.xlabel("number of time steps")
@@ -241,7 +243,6 @@ class Simulation:
         else:
             plt.ylabel("price")
 
-        plt.rcParams['figure.dpi'] = 300
         plt.tight_layout()
         plt.show()
         plt.close()
@@ -286,6 +287,8 @@ class Simulation:
         x, y = np.meshgrid(x, y)
         z = matrix
 
+        plt.rcParams['figure.dpi'] = 150
+
         fig = plt.figure()
         ax = fig.add_subplot(projection='3d')
 
@@ -302,7 +305,11 @@ class Simulation:
 
         ax.tick_params(axis='z', pad=7)
 
-        plt.rcParams['figure.dpi'] = 300
+        # Set white background for the 3D axes panes
+        ax.xaxis.pane.set_facecolor('white')
+        ax.yaxis.pane.set_facecolor('white')
+        ax.zaxis.pane.set_facecolor('white')
+
         plt.tight_layout()
         plt.show()
         plt.close()
