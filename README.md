@@ -1,5 +1,7 @@
 # Numeric Option Pricing
 
+This project represents my Bachelor Thesis in Business Informatics at the [FH Technikum Wien](https://www.technikum-wien.at/en/). 
+
 ## Theory 
 
 ### Wiener Process 
