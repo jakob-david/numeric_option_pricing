@@ -156,7 +156,7 @@ class Simulation:
 
         self.plot_fd(ns_min, ns_max, nt_min, nt_max, bc, difference, CrankNicolson(self.stock).calculate)
 
-    def plot_monte_carlo(self, nt_min, nt_max, difference=True):
+    def plot_monte_carlo(self, nt_min, nt_max, step_size, difference=True):
         """
         Plots the solutions of the Monte-Carlo method for different numbers of runs.
 
@@ -171,7 +171,7 @@ class Simulation:
             print("Error: minimum is one run")
             return
 
-        self.plot(nt_min, nt_max, difference, MonteCarlo(self.stock).calculate)
+        self.plot(nt_min, nt_max, difference, MonteCarlo(self.stock).calculate, step_size, "number of random paths used")
 
     def plot_binomial_tree(self, nt_min, nt_max, difference=True):
         """
@@ -209,7 +209,7 @@ class Simulation:
 
     # plot helper functions
     # --------------------------------------
-    def plot(self, nt_min, nt_max, difference, function):
+    def plot(self, nt_min, nt_max, difference, function, step_size=1, x_label=None):
         """
         Actually handles the plotting for the "other methods".
 
@@ -217,6 +217,7 @@ class Simulation:
         :param nt_max: maximum time steps
         :param difference: false...prices are visible; true...differences to analytic solution are visible
         :param function: the function which is plotted. (the numeric method)
+        :param step_size: the step size of x-axis of the plot. 
 
         :return: plot
         """
@@ -226,18 +227,23 @@ class Simulation:
         else:
             analytic = 0
 
-        y = np.zeros(nt_max-nt_min+1)
-        x = np.zeros(nt_max-nt_min+1)
+        x = []; y = []
 
-        for i in range(nt_min, nt_max+1):
-            y[i-1] = function(i) - analytic
-            x[i-1] = i
+        for i in range(nt_min, nt_max, step_size):
+            x.append(i)
+            y.append(function(i) - analytic)
+
+        x = np.array(x); y = np.array(y)
 
         plt.rcParams['figure.dpi'] = 150
 
         plt.plot(x, y)
 
-        plt.xlabel("number of time steps")
+        if None == x_label:
+            plt.xlabel("number of time steps")
+        else: 
+            plt.xlabel(x_label)
+
         if difference:
             plt.ylabel("difference")
         else:
