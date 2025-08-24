@@ -279,7 +279,7 @@ Figure 8 shows the results of the explicit and implicit finite difference method
 At first glance, the Crank-Nicolson method might appear to converge less steadily, but when examining the scale of the error, it becomes clear that this is not the case. In fact, the method produces very good results even with a relatively small number of time steps.
 
 <p align="center">
-    <img width="500" src="./zz_pictures_for_readme/picture_11.png" alt="Crank-Nicolson Method"><br>
+    <img width="500" src="./zz_pictures_for_readme/picture_11_crank_nicolson.png" alt="Crank-Nicolson Method"><br>
     <em>
     Figure 9: The absolute difference between the analytical solution of the the Crank-Nicolson method.
     </em>
