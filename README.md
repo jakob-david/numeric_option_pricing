@@ -251,7 +251,6 @@ $$
 
 $$
 d_{2} = \frac{\ln \left(\tfrac{S}{K}\right) + \left(r - d - \tfrac{1}{2}\sigma^2\right)T}{\sigma \sqrt{T}}
-= d_{1} - \sigma \sqrt{T}
 $$
 
 $$
