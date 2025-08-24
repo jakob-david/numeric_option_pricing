@@ -22,7 +22,7 @@ $$dS=\mu Sdt+\sigma dz$$
 Here $∆S$ is the change in the stock price $u$ the expected return and $\sigma$ the volatility of the stock. Using this formula and a form of Monte Carlo simulation, one can generate a random outcome of one process for a stock price (Hull, 2015), as is shown in Figure 1. 
 
 <p align="center">
-    <img width="500" src="./zz_pictures_for_readme/picture_1.png" alt="Figure 3"><br>
+    <img width="500" src="./zz_pictures_for_readme/picture_01.png" alt="Figure 3"><br>
     <em>
     Figure 1: A generated random example of the change of a stock price.
     </em>
@@ -73,7 +73,7 @@ It is very easy to calculate the current price of a European option since it is 
 The binomial tree approach is illustrated in Figure 2. The root of the tree is the spot price. Now, there are two possibilities. Either the stock moves up with a certain probability or moves down with a certain probability. From the obtained nodes, the stock can again either go up or down. This goes on as long as it is wanted. Since it makes no difference whether the stock moves first up and then down or vice versa, the two nodes merge. For coding, the Algorithm Thurman (2018) was used. 
 
 <p align="center">
-    <img width="500" src="./zz_pictures_for_readme/picture_2.png" alt="Figure 3"><br>
+    <img width="500" src="./zz_pictures_for_readme/picture_02.png" alt="Figure 3"><br>
     <em>
     Figure 2: Illustration of a binomial tree used for option pricing. (Hull, 2015)
     </em>
@@ -119,7 +119,7 @@ $$f_{i,j}=e^{-r\Delta t}p_{d}f_{i+1,j+1}+p_{m}f_{i+1,j+1}+p_{u}f_{i+1,j+2}$$
 <br>
 
 <p align="center">
-    <img width="500" src="./zz_pictures_for_readme/picture_3.png" alt="Figure 3"><br>
+    <img width="500" src="./zz_pictures_for_readme/picture_03.png" alt="Figure 3"><br>
     <em>
     Figure 3: Illustration of a trinomial tree used for option pricing. (Hull, 2015)
     </em>
@@ -136,7 +136,7 @@ The problem with this equation is 𝜖 since this is not an exact number. 𝜖 c
 Contrary to the methods described above, these are a bit more complex. The presented techniques are also used in physics. Instead of calculating a tree or simulating a normal derivation, these processes rely on building a grid, as shown in Figure 4. 
 
 <p align="center">
-    <img width="300" src="./zz_pictures_for_readme/picture_4.png" alt="Figure 3"><br>
+    <img width="300" src="./zz_pictures_for_readme/picture_04.png" alt="Figure 3"><br>
     <em>
     Figure 4: Illustration of a grid that is used for calculating the price of an option using finite difference methods (Hull, 2015)
     </em>
@@ -165,7 +165,7 @@ $$f\left(M-2,j\right)-2f\left(M-1,j\right)+f\left(M,j\right)=0$$
 There are many different ways to calculate the points inside the grid. In this paper, only three are described, namely the implicit finite difference method, the explicit finite difference method, and the Crank-Nicolson method, where the last one is a combination of the first two. The different methods are illustrated in Figure 5. 
 
 <p align="center">
-    <img width="400" src="./zz_pictures_for_readme/picture_5.png" alt="Figure 3"><br>
+    <img width="400" src="./zz_pictures_for_readme/picture_05.png" alt="Figure 3"><br>
     <em>
     Figure 5: Illustration of the different finite difference methods (Zhang, 2017)
     </em>
