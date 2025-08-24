@@ -243,7 +243,7 @@ After having defined an example option and, thereby, an underlying stock, it is 
 
 ### Analytical Result
 
-Since there exists an analytical solution for european options a price for such options can be calculated directly using the following formula: 
+Since there exists an analytical solution for european options a price for such options can be calculated directly using the following formula where $N$ referes to the normal distribution: 
 
 $$
 d_{1} = \frac{\ln \left(\tfrac{S}{K}\right) + \left(r - d + \tfrac{1}{2}\sigma^2\right)T}{\sigma \sqrt{T}}
